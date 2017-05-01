@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F4C4DFDF1EAA6CFA005CA7D0"
+               BuildableName = "MemoFrameFinal.app"
+               BlueprintName = "MemoFrameFinal"
+               ReferencedContainer = "container:MemoFrameFinal.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F4C4DFF31EAA6CFB005CA7D0"
+               BuildableName = "MemoFrameFinalTests.xctest"
+               BlueprintName = "MemoFrameFinalTests"
+               ReferencedContainer = "container:MemoFrameFinal.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F4C4DFFE1EAA6CFB005CA7D0"
+               BuildableName = "MemoFrameFinalUITests.xctest"
+               BlueprintName = "MemoFrameFinalUITests"
+               ReferencedContainer = "container:MemoFrameFinal.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F4C4DFDF1EAA6CFA005CA7D0"
+            BuildableName = "MemoFrameFinal.app"
+            BlueprintName = "MemoFrameFinal"
+            ReferencedContainer = "container:MemoFrameFinal.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F4C4DFDF1EAA6CFA005CA7D0"
+            BuildableName = "MemoFrameFinal.app"
+            BlueprintName = "MemoFrameFinal"
+            ReferencedContainer = "container:MemoFrameFinal.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F4C4DFDF1EAA6CFA005CA7D0"
+            BuildableName = "MemoFrameFinal.app"
+            BlueprintName = "MemoFrameFinal"
+            ReferencedContainer = "container:MemoFrameFinal.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		F4C4DFE41EAA6CFB005CA7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4DFE31EAA6CFB005CA7D0 /* AppDelegate.swift */; };
-		F4C4DFE61EAA6CFB005CA7D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4DFE51EAA6CFB005CA7D0 /* ViewController.swift */; };
 		F4C4DFE91EAA6CFB005CA7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C4DFE71EAA6CFB005CA7D0 /* Main.storyboard */; };
 		F4C4DFEB1EAA6CFB005CA7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C4DFEA1EAA6CFB005CA7D0 /* Assets.xcassets */; };
 		F4C4DFEE1EAA6CFB005CA7D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C4DFEC1EAA6CFB005CA7D0 /* LaunchScreen.storyboard */; };
 		F4C4DFF91EAA6CFB005CA7D0 /* MemoFrameFinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4DFF81EAA6CFB005CA7D0 /* MemoFrameFinalTests.swift */; };
 		F4C4E0041EAA6CFB005CA7D0 /* MemoFrameFinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4E0031EAA6CFB005CA7D0 /* MemoFrameFinalUITests.swift */; };
+		F4C4E0121EAA6D1B005CA7D0 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4E0111EAA6D1B005CA7D0 /* SplashScreenViewController.swift */; };
+		F4F10A7C1EB6BB6C00E5034C /* KontaktOssViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F10A7B1EB6BB6C00E5034C /* KontaktOssViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		F4C4DFE01EAA6CFA005CA7D0 /* MemoFrameFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoFrameFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C4DFE31EAA6CFB005CA7D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4C4DFE51EAA6CFB005CA7D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F4C4DFE81EAA6CFB005CA7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4C4DFEA1EAA6CFB005CA7D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4C4DFED1EAA6CFB005CA7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		F4C4DFFF1EAA6CFB005CA7D0 /* MemoFrameFinalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoFrameFinalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C4E0031EAA6CFB005CA7D0 /* MemoFrameFinalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFrameFinalUITests.swift; sourceTree = "<group>"; };
 		F4C4E0051EAA6CFB005CA7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4C4E0111EAA6D1B005CA7D0 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		F4F10A7B1EB6BB6C00E5034C /* KontaktOssViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KontaktOssViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				F4C4DFE31EAA6CFB005CA7D0 /* AppDelegate.swift */,
-				F4C4DFE51EAA6CFB005CA7D0 /* ViewController.swift */,
-				F4C4DFE71EAA6CFB005CA7D0 /* Main.storyboard */,
-				F4C4DFEA1EAA6CFB005CA7D0 /* Assets.xcassets */,
-				F4C4DFEC1EAA6CFB005CA7D0 /* LaunchScreen.storyboard */,
 				F4C4DFEF1EAA6CFB005CA7D0 /* Info.plist */,
+				F4C4DFEA1EAA6CFB005CA7D0 /* Assets.xcassets */,
+				F4F10A7A1EB6432D00E5034C /* View */,
+				F4F10A781EB6430A00E5034C /* ViewController */,
+				F4F10A761EB642F700E5034C /* Model */,
 			);
 			path = MemoFrameFinal;
 			sourceTree = "<group>";
@@ -123,6 +125,31 @@
 				F4C4E0051EAA6CFB005CA7D0 /* Info.plist */,
 			);
 			path = MemoFrameFinalUITests;
+			sourceTree = "<group>";
+		};
+		F4F10A761EB642F700E5034C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F4F10A781EB6430A00E5034C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F4C4E0111EAA6D1B005CA7D0 /* SplashScreenViewController.swift */,
+				F4F10A7B1EB6BB6C00E5034C /* KontaktOssViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		F4F10A7A1EB6432D00E5034C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4C4DFE71EAA6CFB005CA7D0 /* Main.storyboard */,
+				F4C4DFEC1EAA6CFB005CA7D0 /* LaunchScreen.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +286,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4C4DFE61EAA6CFB005CA7D0 /* ViewController.swift in Sources */,
 				F4C4DFE41EAA6CFB005CA7D0 /* AppDelegate.swift in Sources */,
+				F4F10A7C1EB6BB6C00E5034C /* KontaktOssViewController.swift in Sources */,
+				F4C4E0121EAA6D1B005CA7D0 /* SplashScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +533,7 @@
 				F4C4E00A1EAA6CFB005CA7D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4C4E00B1EAA6CFB005CA7D0 /* Build configuration list for PBXNativeTarget "MemoFrameFinalTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +542,7 @@
 				F4C4E00D1EAA6CFB005CA7D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4C4E00E1EAA6CFB005CA7D0 /* Build configuration list for PBXNativeTarget "MemoFrameFinalUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +551,7 @@
 				F4C4E0101EAA6CFB005CA7D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
