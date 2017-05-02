@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="-13" y="42"/>
         </scene>
-        <!--View Controller-->
+        <!--Logg Inn View Controller-->
         <scene sceneID="jgA-pk-hep">
             <objects>
-                <viewController id="KX2-vw-vy6" sceneMemberID="viewController">
+                <viewController id="KX2-vw-vy6" customClass="LoggInnViewController" customModule="MemoFrameFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BHY-uo-qO5"/>
                         <viewControllerLayoutGuide type="bottom" id="ISV-6C-JOx"/>
@@ -275,7 +275,7 @@
                                 </constraints>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Registrer">
+                                        <fragment content="Logg inn">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="35" name="Futura-Bold"/>
@@ -289,6 +289,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logginn:" destination="KX2-vw-vy6" eventType="touchUpInside" id="nSl-mk-Ins"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9s-20-Fng">
                                 <rect key="frame" x="247" y="190" width="274" height="102"/>
@@ -323,13 +326,17 @@
                             <constraint firstItem="exY-jA-ptb" firstAttribute="centerY" secondItem="BE3-Or-jI5" secondAttribute="centerY" constant="19.5" id="VIo-0Z-YGE"/>
                             <constraint firstAttribute="trailing" secondItem="dkE-ji-eDm" secondAttribute="trailing" id="XND-3g-u1m"/>
                             <constraint firstItem="ieB-jP-wHg" firstAttribute="centerX" secondItem="BE3-Or-jI5" secondAttribute="centerX" constant="99.5" id="cnV-zW-SMw"/>
-                            <constraint firstItem="7f5-UC-kjd" firstAttribute="centerY" secondItem="BE3-Or-jI5" secondAttribute="centerY" constant="149.5" id="pgU-ii-XDX"/>
+                            <constraint firstItem="7f5-UC-kjd" firstAttribute="centerY" secondItem="BE3-Or-jI5" secondAttribute="centerY" constant="149" id="pgU-ii-XDX"/>
                             <constraint firstItem="ISV-6C-JOx" firstAttribute="top" secondItem="X5g-S9-7Up" secondAttribute="bottom" id="qKP-Yy-cSe"/>
                             <constraint firstItem="jON-sw-tZz" firstAttribute="centerX" secondItem="BE3-Or-jI5" secondAttribute="centerX" constant="-238.5" id="qeS-S0-t8B"/>
                             <constraint firstItem="O9s-20-Fng" firstAttribute="centerY" secondItem="BE3-Or-jI5" secondAttribute="centerY" constant="-271" id="rLN-J8-Exc"/>
                             <constraint firstItem="Mzs-j2-Svw" firstAttribute="centerX" secondItem="BE3-Or-jI5" secondAttribute="centerX" constant="-215.5" id="sxf-xz-nXu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="epost" destination="ieB-jP-wHg" id="KMj-iR-Yzw"/>
+                        <outlet property="passord" destination="exY-jA-ptb" id="jEi-ue-gSL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLu-zI-y5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1868,7 +1875,7 @@
         <image name="phone-receiver" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u4P-Oi-yNb"/>
+        <segue reference="ukN-cq-493"/>
         <segue reference="Wc8-zC-VEw"/>
     </inferredMetricsTieBreakers>
 </document>
