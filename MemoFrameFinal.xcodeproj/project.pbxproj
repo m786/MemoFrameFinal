@@ -17,6 +17,9 @@
 		AF4376D21EB7FBAF00522E03 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4376D11EB7FBAF00522E03 /* AlamofireImage.framework */; };
 		AF4376D81EB7FCF500522E03 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376D71EB7FCF500522E03 /* Popup.swift */; };
 		AF4376D91EB8013400522E03 /* PopupDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4376D31EB7FBB600522E03 /* PopupDialog.framework */; };
+		AF4376DB1EB80EF800522E03 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376DA1EB80EF800522E03 /* Networking.swift */; };
+		AF4376DD1EB8104500522E03 /* Alamofire_Synchronous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4376DC1EB8104500522E03 /* Alamofire_Synchronous.framework */; };
+		AF4376DF1EB8266100522E03 /* HovedmenyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376DE1EB8266100522E03 /* HovedmenyViewController.swift */; };
 		B317CE373EBEA252E42C981D /* Pods_MemoFrameFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E91854DC53FE6691446062 /* Pods_MemoFrameFinal.framework */; };
 		F4C4DFE41EAA6CFB005CA7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4DFE31EAA6CFB005CA7D0 /* AppDelegate.swift */; };
 		F4C4DFE91EAA6CFB005CA7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C4DFE71EAA6CFB005CA7D0 /* Main.storyboard */; };
@@ -58,6 +61,9 @@
 		AF4376D11EB7FBAF00522E03 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "../../Library/Developer/Xcode/DerivedData/MemoFrameFinal-fyfuikeqlgmytifbwzgdzgolcltj/Build/Products/Debug-iphonesimulator/AlamofireImage/AlamofireImage.framework"; sourceTree = "<group>"; };
 		AF4376D31EB7FBB600522E03 /* PopupDialog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PopupDialog.framework; path = "../../Library/Developer/Xcode/DerivedData/MemoFrameFinal-fyfuikeqlgmytifbwzgdzgolcltj/Build/Products/Debug-iphonesimulator/PopupDialog/PopupDialog.framework"; sourceTree = "<group>"; };
 		AF4376D71EB7FCF500522E03 /* Popup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		AF4376DA1EB80EF800522E03 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		AF4376DC1EB8104500522E03 /* Alamofire_Synchronous.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire_Synchronous.framework; path = "../../Library/Developer/Xcode/DerivedData/MemoFrameFinal-fyfuikeqlgmytifbwzgdzgolcltj/Build/Products/Debug-iphonesimulator/Alamofire-Synchronous/Alamofire_Synchronous.framework"; sourceTree = "<group>"; };
+		AF4376DE1EB8266100522E03 /* HovedmenyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HovedmenyViewController.swift; sourceTree = "<group>"; };
 		C359D6B0F7556DF01038DE3E /* Pods-MemoFrameFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoFrameFinal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoFrameFinal/Pods-MemoFrameFinal.debug.xcconfig"; sourceTree = "<group>"; };
 		F4C4DFE01EAA6CFA005CA7D0 /* MemoFrameFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoFrameFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C4DFE31EAA6CFB005CA7D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4376DD1EB8104500522E03 /* Alamofire_Synchronous.framework in Frameworks */,
 				AF4376D91EB8013400522E03 /* PopupDialog.framework in Frameworks */,
 				AF4376D21EB7FBAF00522E03 /* AlamofireImage.framework in Frameworks */,
 				AF4376D01EB7FBAB00522E03 /* Alamofire.framework in Frameworks */,
@@ -107,6 +114,7 @@
 		902690F8F6DDD3C73B0A9ABE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF4376DC1EB8104500522E03 /* Alamofire_Synchronous.framework */,
 				AF4376D31EB7FBB600522E03 /* PopupDialog.framework */,
 				AF4376D11EB7FBAF00522E03 /* AlamofireImage.framework */,
 				AF4376CF1EB7FBAB00522E03 /* Alamofire.framework */,
@@ -202,6 +210,7 @@
 				AF4376C71EB7ED3500522E03 /* Tid.swift */,
 				AF4376C91EB7ED9100522E03 /* Url.swift */,
 				AF4376D71EB7FCF500522E03 /* Popup.swift */,
+				AF4376DA1EB80EF800522E03 /* Networking.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -212,6 +221,7 @@
 				F4C4E0111EAA6D1B005CA7D0 /* SplashScreenViewController.swift */,
 				F4F10A7B1EB6BB6C00E5034C /* KontaktOssViewController.swift */,
 				AF4376CB1EB7EF2B00522E03 /* LoggInnViewController.swift */,
+				AF4376DE1EB8266100522E03 /* HovedmenyViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -411,6 +421,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF4376CC1EB7EF2B00522E03 /* LoggInnViewController.swift in Sources */,
+				AF4376DB1EB80EF800522E03 /* Networking.swift in Sources */,
+				AF4376DF1EB8266100522E03 /* HovedmenyViewController.swift in Sources */,
 				AF4376C61EB7ECC300522E03 /* Testen.swift in Sources */,
 				F4C4DFE41EAA6CFB005CA7D0 /* AppDelegate.swift in Sources */,
 				AF4376BF1EB7EB0E00522E03 /* Regex.swift in Sources */,

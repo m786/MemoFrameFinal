@@ -26,7 +26,7 @@ class Popup: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func vis(fromController controller: UIViewController,melding: String){
+    func vis(fromController controller: UIViewController,melding: String,tittel:String){
         //lage costumize popup
         var dialogAppearance = PopupDialogDefaultView.appearance()
         dialogAppearance.titleFont            = UIFont(name: "Futura", size: 20)!
@@ -41,7 +41,7 @@ class Popup: UIViewController {
        
         
         //forbereder popup vindu
-        let title = "Noe gikk galt!"
+        let title = tittel
         var message = melding
         // oppretter dialog vindu
         let popup = PopupDialog(title: title, message: message)

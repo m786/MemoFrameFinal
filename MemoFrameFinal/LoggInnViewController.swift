@@ -40,17 +40,27 @@ class LoggInnViewController: UIViewController {
         if (regex.verifiserEpost(tekst: epost.text!)) {
             gyldigEpost = true
         } else {
-             popupvindu.vis(fromController: self,melding: "Skriv inn riktig epost aderesse.")
+            popupvindu.vis(fromController: self,melding: "Skriv inn riktig epost aderesse.",tittel: "Noe gikk galt!")
         }
         //sjekker om passord er tatet riktig
         if (regex.verifiserPassord(tekst: passord.text!)) {
             gyldigPassord = true
         } else {
-             popupvindu.vis(fromController: self,melding: "Skriv inn passord.")
+            popupvindu.vis(fromController: self,melding: "Skriv inn passord.",tittel:"Noe gikk galt!")
         }
-        //dersom alt er riktig
+        //dersom alt er tastet riktig
         if (gyldigEpost && gyldigPassord) {
-          
+          var nodeJs = Networking()
+          var token = nodeJs.getToken(epost: epost.text!, passord: passord.text!)
+            if(!token.isEmpty){
+                var array = nodeJs.logginn(token: token, epost: epost.text!, passord: passord.text!)
+                self.performSegue(withIdentifier: "Innlogget", sender: array)
+            }
+            else{
+             popupvindu.vis(fromController: self,melding: "Fant ikke bruker,prøv igjen.",tittel:"Noe gikk galt!")
+            }
+            
+        
         }
         
       
@@ -65,5 +75,19 @@ class LoggInnViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    // forbereder data til å bli flyttet fra denne viewen tl en annen via en segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "Innlogget" {
+            
+            if let destination = segue.destination as? HovedmenyViewController {
+                
+                // må være samme type som det variabelen som skal ta imot i det andre viewet
+                destination.brukerInfo = (sender as? NSDictionary!)!
+                
+            }
+        }
+        
+    }
 
 }
