@@ -1640,6 +1640,7 @@
                         <outlet property="kjonn" destination="dfa-Vt-INB" id="0gY-TU-IS7"/>
                         <outlet property="land" destination="E7A-L4-8fE" id="RKf-Mi-fh8"/>
                         <outlet property="passord" destination="zWh-2Q-2UL" id="iD1-85-0tY"/>
+                        <outlet property="sendKnapp" destination="oqs-9B-zGA" id="AX6-Ek-bDt"/>
                         <segue destination="b1o-AE-yU9" kind="show" identifier="hovedmeny" id="3zN-BA-vyc"/>
                         <segue destination="lpT-z7-AKC" kind="show" identifier="tilbake" id="j7M-0W-R61"/>
                     </connections>

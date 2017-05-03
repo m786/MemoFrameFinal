@@ -20,6 +20,7 @@ class RegistreringTilbakemeldingViewController: UIViewController {
     var epost = ""
     var pass = ""
     
+    @IBOutlet weak var sendKnapp: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +71,7 @@ class RegistreringTilbakemeldingViewController: UIViewController {
         if(!token.isEmpty){
         nodeJs.sendInfo(data: sendData, token: token)
             popupvindu.vis(fromController: self,melding: "Sjekk din epost for info du tastet inn.",tittel: "Grattlerer du er nå registrert!")
+            sendKnapp.isHidden = true
             
         }else{
         
