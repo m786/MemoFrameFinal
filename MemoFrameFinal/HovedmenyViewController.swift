@@ -23,15 +23,59 @@ class HovedmenyViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func taTester(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "velgTester", sender: brukerInfo)
     }
-    */
+    @IBAction func testresultater(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "resultater", sender: brukerInfo)
+    }
+    @IBAction func bruker(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "endreBruker", sender: brukerInfo)
+    }
+
+    @IBAction func instillinger(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "setup", sender: brukerInfo)
+    }
+    @IBAction func loggUt(_ sender: UIButton) {
+       brukerInfo = [:]
+       self.dismiss(animated: true, completion: nil)
+    }
+  
+    // forbereder data til å bli flyttet fra denne viewen tl en annen via en segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "velgTester" {
+            
+            if let destination = segue.destination as? TesterViewController {
+                
+                // må være samme type som det variabelen som skal ta imot i det andre viewet
+                destination.brukerInfo = (sender as? NSDictionary!)!
+            }
+        }
+        else if segue.identifier == "resultater" {
+            
+            if let destination = segue.destination as? ResultaterViewController {
+                
+                // må være samme type som det variabelen som skal ta imot i det andre viewet
+                destination.brukerInfo = (sender as? NSDictionary!)!
+            }
+        }
+        else if segue.identifier == "endreBruker" {
+            
+            if let destination = segue.destination as? OppdaterBrukerViewController {
+                
+                // må være samme type som det variabelen som skal ta imot i det andre viewet
+                destination.brukerInfo = (sender as? NSDictionary!)!
+            }
+        }
+        else if segue.identifier == "setup" {
+            
+            if let destination = segue.destination as? InstillingerViewController {
+                
+                // må være samme type som det variabelen som skal ta imot i det andre viewet
+                destination.brukerInfo = (sender as? NSDictionary!)!
+            }
+        }
+    }
 
 }

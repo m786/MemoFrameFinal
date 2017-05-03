@@ -55,7 +55,7 @@ class Regex{
     func verifiserPassord(tekst: String) -> Bool {
         
         //implementere funksjonalitet for minst en stor bokstav?
-        let monster = "[A-Za-z0-9]"
+        let monster = "[A-Za-z0-9]{8,}"
         
         if tekst.range(of: monster, options: .regularExpression) != nil {
             
@@ -66,6 +66,28 @@ class Regex{
             return false
         }
     }
-
-
+    //Sjekker om land felt ikke er tom
+    func verifiserLand(tekst: String) -> Bool {
+        
+        if(!tekst.isEmpty){
+            
+            return true
+            
+        } else {
+            
+            return false
+        }
+    }
+    //Verifiser kjønn
+    func verifiserKjonn(tekst: String) -> Bool {
+        
+        if(tekst == "Mann" || tekst == "Kvinne" || tekst == "mann" || tekst == "kvinne"){
+            
+            return true
+            
+        } else {
+            
+            return false
+        }
+    }
 }

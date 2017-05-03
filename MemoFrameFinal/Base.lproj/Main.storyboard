@@ -76,6 +76,87 @@
             </objects>
             <point key="canvasLocation" x="-13" y="42"/>
         </scene>
+        <!--Tester View Controller-->
+        <scene sceneID="92y-HL-wfg">
+            <objects>
+                <viewController id="KyE-nz-Le0" customClass="TesterViewController" customModule="MemoFrameFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fAt-JE-kra"/>
+                        <viewControllerLayoutGuide type="bottom" id="FDh-Fw-7l0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dZf-NK-fyC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tester" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK1-Ca-XZM">
+                                <rect key="frame" x="306" y="28" width="262" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rwb-9a-6ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758.59375" y="-1316.015625"/>
+        </scene>
+        <!--Resultater View Controller-->
+        <scene sceneID="uPb-xd-08Z">
+            <objects>
+                <viewController id="cXP-bw-ToP" customClass="ResultaterViewController" customModule="MemoFrameFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UPO-jA-NKM"/>
+                        <viewControllerLayoutGuide type="bottom" id="yJ3-0Y-afc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jWo-I1-3hg">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Testresultater" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPI-eF-DEl">
+                                <rect key="frame" x="363" y="75" width="106" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dbp-3w-wPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1515" y="-1316"/>
+        </scene>
+        <!--Oppdater Bruker View Controller-->
+        <scene sceneID="JXi-JA-a9y">
+            <objects>
+                <viewController id="KIj-hh-odw" customClass="OppdaterBrukerViewController" customModule="MemoFrameFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zeN-vx-HL0"/>
+                        <viewControllerLayoutGuide type="bottom" id="hum-bo-ifh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I6r-NA-F3c">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bruker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqQ-kV-Yiz">
+                                <rect key="frame" x="363" y="116" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eLs-82-7VO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2309.375" y="-1316.015625"/>
+        </scene>
         <!--Logg Inn View Controller-->
         <scene sceneID="jgA-pk-hep">
             <objects>
@@ -222,7 +303,7 @@
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
@@ -336,6 +417,7 @@
                     <connections>
                         <outlet property="epost" destination="ieB-jP-wHg" id="KMj-iR-Yzw"/>
                         <outlet property="passord" destination="exY-jA-ptb" id="jEi-ue-gSL"/>
+                        <segue destination="b1o-AE-yU9" kind="show" identifier="Innlogget" id="saR-CF-XOe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLu-zI-y5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -370,6 +452,46 @@
                                     <constraint firstAttribute="width" constant="768" id="k99-AF-4gz"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="418-4L-rww">
+                                <rect key="frame" x="84" y="283" width="212" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Ta tester"/>
+                                <connections>
+                                    <action selector="taTester:" destination="b1o-AE-yU9" eventType="touchUpInside" id="cLn-6X-AjP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHd-PG-VDe">
+                                <rect key="frame" x="147" y="472" width="94" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Bruker"/>
+                                <connections>
+                                    <action selector="bruker:" destination="b1o-AE-yU9" eventType="touchUpInside" id="S1m-Am-g5l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQA-BL-0Qg">
+                                <rect key="frame" x="390" y="472" width="108" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Instillinger"/>
+                                <connections>
+                                    <action selector="instillinger:" destination="b1o-AE-yU9" eventType="touchUpInside" id="ldI-PZ-kOl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvD-Bx-Gx3">
+                                <rect key="frame" x="264" y="646" width="146" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logg ut"/>
+                                <connections>
+                                    <action selector="loggUt:" destination="b1o-AE-yU9" eventType="touchUpInside" id="kzJ-dY-YUj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbd-83-tFU">
+                                <rect key="frame" x="390" y="286" width="121" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Testresultater"/>
+                                <connections>
+                                    <action selector="testresultater:" destination="b1o-AE-yU9" eventType="touchUpInside" id="wuu-ma-wPI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -380,12 +502,42 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="KX2-vw-vy6" kind="show" identifier="Innlogget" id="t10-Zu-wHz"/>
+                        <segue destination="KyE-nz-Le0" kind="show" identifier="velgTester" id="S7J-wB-zvm"/>
+                        <segue destination="cXP-bw-ToP" kind="show" identifier="resultater" id="0h0-zd-5iW"/>
+                        <segue destination="KIj-hh-odw" kind="show" identifier="endreBruker" id="8hC-7r-oje"/>
+                        <segue destination="EOS-4F-fsf" kind="show" identifier="setup" id="rqt-QM-5cw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4e-Jg-g3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1543" y="-613"/>
+            <point key="canvasLocation" x="1542.96875" y="-613.4765625"/>
+        </scene>
+        <!--Instillinger View Controller-->
+        <scene sceneID="G6v-vN-KZv">
+            <objects>
+                <viewController id="EOS-4F-fsf" customClass="InstillingerViewController" customModule="MemoFrameFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4fO-yU-aNP"/>
+                        <viewControllerLayoutGuide type="bottom" id="6KW-e7-6aO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5kB-2A-jVP">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instillinger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSD-IX-yDW">
+                                <rect key="frame" x="363" y="122" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BL5-do-qnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2312" y="-637"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OFo-ko-ByS">
@@ -625,10 +777,10 @@
             </objects>
             <point key="canvasLocation" x="765" y="42"/>
         </scene>
-        <!--Test2-->
+        <!--Registrering View Controller-->
         <scene sceneID="gNg-hO-d6E">
             <objects>
-                <viewController id="g8t-Qo-jyg" customClass="test2" customModule="MemoFrameFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="g8t-Qo-jyg" customClass="RegistreringViewController" customModule="MemoFrameFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aap-dB-CMV"/>
                         <viewControllerLayoutGuide type="bottom" id="T18-ol-pOb"/>
@@ -862,7 +1014,7 @@
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
@@ -948,7 +1100,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="LgE-mR-T7E" kind="show" animates="NO" id="vLR-NE-2DV"/>
+                                    <action selector="registrer:" destination="g8t-Qo-jyg" eventType="touchUpInside" id="0pR-fb-ivY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -986,6 +1138,14 @@
                             <constraint firstItem="mog-3W-q4u" firstAttribute="centerX" secondItem="6sP-EN-uby" secondAttribute="centerX" constant="-243" id="zgr-MT-hnL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="epostFelt" destination="T6a-8B-KrK" id="iDU-NL-rWK"/>
+                        <outlet property="fodselsaarFelt" destination="uSv-0r-ndi" id="wk7-01-83c"/>
+                        <outlet property="kjonnFelt" destination="Uan-NR-3bL" id="Smf-XJ-UKs"/>
+                        <outlet property="landFelt" destination="e1x-nk-Lh3" id="szT-Ar-aCw"/>
+                        <outlet property="passordFelt" destination="TtV-eR-Ohs" id="6yW-KB-9fA"/>
+                        <segue destination="LgE-mR-T7E" kind="show" identifier="segueRegistreringTilbakemelding" id="hNx-8g-zAn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTn-Ti-ZHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1136,10 +1296,10 @@
             </objects>
             <point key="canvasLocation" x="1541" y="775"/>
         </scene>
-        <!--View Controller-->
+        <!--Registrering Tilbakemelding View Controller-->
         <scene sceneID="TCJ-l6-UdO">
             <objects>
-                <viewController id="LgE-mR-T7E" sceneMemberID="viewController">
+                <viewController id="LgE-mR-T7E" customClass="RegistreringTilbakemeldingViewController" customModule="MemoFrameFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8vK-yZ-Y6k"/>
                         <viewControllerLayoutGuide type="bottom" id="cwv-hp-U1l"/>
@@ -1160,7 +1320,7 @@
                                         </constraints>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="&lt; Tilbake til meny">
+                                                <fragment content="Logg inn">
                                                     <attributes>
                                                         <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <font key="NSFont" size="35" name="Futura-Bold"/>
@@ -1174,6 +1334,9 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loggInn:" destination="LgE-mR-T7E" eventType="touchUpInside" id="1yo-sV-1h6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
@@ -1406,7 +1569,7 @@
                                 </constraints>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Gå tilbake til meny">
+                                        <fragment content="Send info på mail">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="35" name="Futura-Bold"/>
@@ -1420,6 +1583,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendInfo:" destination="LgE-mR-T7E" eventType="touchUpInside" id="jU6-Ji-K7s"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFV-l6-6nU">
                                 <rect key="frame" x="259" y="292" width="509" height="318"/>
@@ -1468,6 +1634,15 @@
                             <constraint firstItem="ekA-bb-mLe" firstAttribute="centerY" secondItem="v3f-sD-dFF" secondAttribute="centerY" constant="-179" id="yVw-Ne-jUA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="epostTilbakemelding" destination="ekA-bb-mLe" id="ycP-28-tPk"/>
+                        <outlet property="fodselsaar" destination="URB-Wh-F1e" id="m6v-qp-u3r"/>
+                        <outlet property="kjonn" destination="dfa-Vt-INB" id="0gY-TU-IS7"/>
+                        <outlet property="land" destination="E7A-L4-8fE" id="RKf-Mi-fh8"/>
+                        <outlet property="passord" destination="zWh-2Q-2UL" id="iD1-85-0tY"/>
+                        <segue destination="b1o-AE-yU9" kind="show" identifier="hovedmeny" id="3zN-BA-vyc"/>
+                        <segue destination="lpT-z7-AKC" kind="show" identifier="tilbake" id="j7M-0W-R61"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRC-6O-5Iw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1920,8 +2095,8 @@
         <image name="phone-receiver" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wc8-zC-VEw"/>
-        <segue reference="ukN-cq-493"/>
-        <segue reference="t10-Zu-wHz"/>
+        <segue reference="3zN-BA-vyc"/>
+        <segue reference="j7M-0W-R61"/>
+        <segue reference="u4P-Oi-yNb"/>
     </inferredMetricsTieBreakers>
 </document>

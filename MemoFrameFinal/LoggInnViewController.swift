@@ -41,23 +41,25 @@ class LoggInnViewController: UIViewController {
             gyldigEpost = true
         } else {
             popupvindu.vis(fromController: self,melding: "Skriv inn riktig epost aderesse.",tittel: "Noe gikk galt!")
+            return
         }
         //sjekker om passord er tatet riktig
         if (regex.verifiserPassord(tekst: passord.text!)) {
             gyldigPassord = true
         } else {
             popupvindu.vis(fromController: self,melding: "Skriv inn passord.",tittel:"Noe gikk galt!")
+            return
         }
         //dersom alt er tastet riktig
         if (gyldigEpost && gyldigPassord) {
           var nodeJs = Networking()
-          var token = nodeJs.getToken(epost: epost.text!, passord: passord.text!)
+          var token = nodeJs.getToken()
             if(!token.isEmpty){
                 var array = nodeJs.logginn(token: token, epost: epost.text!, passord: passord.text!)
                 self.performSegue(withIdentifier: "Innlogget", sender: array)
             }
             else{
-             popupvindu.vis(fromController: self,melding: "Fant ikke bruker,prøv igjen.",tittel:"Noe gikk galt!")
+             popupvindu.vis(fromController: self,melding: "Fant ikke bruker,prøv igjen eller kontakt admin.",tittel:"Noe gikk galt!")
             }
             
         
@@ -66,15 +68,6 @@ class LoggInnViewController: UIViewController {
       
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     // forbereder data til å bli flyttet fra denne viewen tl en annen via en segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

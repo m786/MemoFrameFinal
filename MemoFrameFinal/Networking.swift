@@ -13,8 +13,10 @@ import Alamofire_Synchronous
 
 class Networking{
   
+    var url = Url()
+    
     //token for å kunne akksesere backend
-    func getToken(epost:String,passord:String)->String{
+    func getToken()->String{
         
         var token = ""
         
@@ -22,13 +24,7 @@ class Networking{
             "newUser":"newuser"
         ]
         
-        let parameters: Parameters = [
-            "email": epost,
-            "passord": passord,
-            ]
-        
-        
-        let response = Alamofire.request("http://www.gruppe18.tk:8080",method: .post,headers:headers).responseJSON()
+        let response = Alamofire.request(url.hovedlink,method: .post,headers:headers).responseJSON()
         if let json = response.result.value {
            
             let JSON = json as! NSDictionary
@@ -56,7 +52,7 @@ class Networking{
     "x-access-token": token
     ]
     
-    let response = Alamofire.request("http://www.gruppe18.tk:8080/api/authenticate",method: .post,parameters:parameters,headers:headers).responseJSON()
+    let response = Alamofire.request(url.loginnUrl,method: .post,parameters:parameters,headers:headers).responseJSON()
     
     
     if let result = response.result.value {
@@ -73,6 +69,80 @@ class Networking{
     
       }
      return array
+    }
+    
+    //Registrer bruker
+    func registrering(token:String,epost :String,passord:String,land:String,fodt:String,kjonn:String)->NSDictionary{
+    var array : NSDictionary = [:]
+       
+    let parameters: Parameters = [
+            "email": epost,
+            "passord": passord,
+            "land":land,
+            "alder" : fodt,
+            "kjonn": kjonn
+        ]
+        let headers : HTTPHeaders = [
+            "x-access-token": token
+        ]
+        
+        let response = Alamofire.request(url.addUserUrl,method: .post,parameters:parameters,headers:headers).responseJSON()
+            
+            if let result = response.result.value {
+                let JSON = result as! NSDictionary
+                let err = JSON.object(forKey: "Error") as! Bool
+                let msg = JSON.object(forKey: "Message") as! String
+                //velykket registrering
+                if(!err){
+                    
+                array = [
+                        "email": epost,
+                        "passord": passord,
+                        "land": land,
+                        "alder" : fodt,
+                        "kjonn": kjonn]
+                    
+                }
+            }
+        return array
+    }
+    //retunerer boolean verdi som forteller om infoen ble sendt eller ikke
+    func sendInfo(data : [String:String],token : String)->Bool{
+        
+        var parameters: Parameters = [
+            "email":"",
+            "passord": "",
+            "land":"",
+            "alder" :"" ,
+            "kjonn": ""
+        ]
+        
+        let headers : HTTPHeaders = [
+            "newUser":token
+        ]
+        
+        for (key, value) in data {
+            if(key == "email"){
+                parameters.updateValue(value, forKey: key)
+            }
+            else if(key == "passord"){
+                parameters.updateValue(value, forKey: key)
+            }
+            else if(key == "land"){
+                parameters.updateValue(value, forKey: key)
+            }
+            else if(key == "alder"){
+                parameters.updateValue(value, forKey: key)
+            }
+            else if(key == "kjonn"){
+                parameters.updateValue(value, forKey: key)
+            }
+        }
+        
+        let response = Alamofire.request("http://www.gruppe18.tk:8080/api/users/sendInfo",method: .post,parameters:parameters,headers:headers)
+        
+        return true
+        
     }
 
 }

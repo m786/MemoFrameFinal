@@ -28,6 +28,9 @@ class Url{
     //single test id url-husk å legge til id som parameter
     private let singleId : String = "/api/test/runde/"
     
+    var hovedlink: String{
+        get{return baseUrl}
+    }
     //getmetode for login url
     var loginnUrl :String {
         get{return "\(baseUrl)\(loginUrl)"}

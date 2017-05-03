@@ -20,6 +20,12 @@
 		AF4376DB1EB80EF800522E03 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376DA1EB80EF800522E03 /* Networking.swift */; };
 		AF4376DD1EB8104500522E03 /* Alamofire_Synchronous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4376DC1EB8104500522E03 /* Alamofire_Synchronous.framework */; };
 		AF4376DF1EB8266100522E03 /* HovedmenyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376DE1EB8266100522E03 /* HovedmenyViewController.swift */; };
+		AF45067C1EB9374900AE4FE7 /* TesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF45067B1EB9374900AE4FE7 /* TesterViewController.swift */; };
+		AF45067E1EB937F400AE4FE7 /* ResultaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF45067D1EB937F400AE4FE7 /* ResultaterViewController.swift */; };
+		AF4506801EB9385500AE4FE7 /* OppdaterBrukerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF45067F1EB9385500AE4FE7 /* OppdaterBrukerViewController.swift */; };
+		AF4506821EB938C300AE4FE7 /* InstillingerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4506811EB938C300AE4FE7 /* InstillingerViewController.swift */; };
+		AF4506841EB9429900AE4FE7 /* RegistreringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4506831EB9429900AE4FE7 /* RegistreringViewController.swift */; };
+		AF4506861EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4506851EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift */; };
 		B317CE373EBEA252E42C981D /* Pods_MemoFrameFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E91854DC53FE6691446062 /* Pods_MemoFrameFinal.framework */; };
 		F4C4DFE41EAA6CFB005CA7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4DFE31EAA6CFB005CA7D0 /* AppDelegate.swift */; };
 		F4C4DFE91EAA6CFB005CA7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C4DFE71EAA6CFB005CA7D0 /* Main.storyboard */; };
@@ -64,6 +70,12 @@
 		AF4376DA1EB80EF800522E03 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		AF4376DC1EB8104500522E03 /* Alamofire_Synchronous.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire_Synchronous.framework; path = "../../Library/Developer/Xcode/DerivedData/MemoFrameFinal-fyfuikeqlgmytifbwzgdzgolcltj/Build/Products/Debug-iphonesimulator/Alamofire-Synchronous/Alamofire_Synchronous.framework"; sourceTree = "<group>"; };
 		AF4376DE1EB8266100522E03 /* HovedmenyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HovedmenyViewController.swift; sourceTree = "<group>"; };
+		AF45067B1EB9374900AE4FE7 /* TesterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TesterViewController.swift; sourceTree = "<group>"; };
+		AF45067D1EB937F400AE4FE7 /* ResultaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultaterViewController.swift; sourceTree = "<group>"; };
+		AF45067F1EB9385500AE4FE7 /* OppdaterBrukerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OppdaterBrukerViewController.swift; sourceTree = "<group>"; };
+		AF4506811EB938C300AE4FE7 /* InstillingerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstillingerViewController.swift; sourceTree = "<group>"; };
+		AF4506831EB9429900AE4FE7 /* RegistreringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistreringViewController.swift; sourceTree = "<group>"; };
+		AF4506851EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistreringTilbakemeldingViewController.swift; sourceTree = "<group>"; };
 		C359D6B0F7556DF01038DE3E /* Pods-MemoFrameFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoFrameFinal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoFrameFinal/Pods-MemoFrameFinal.debug.xcconfig"; sourceTree = "<group>"; };
 		F4C4DFE01EAA6CFA005CA7D0 /* MemoFrameFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoFrameFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C4DFE31EAA6CFB005CA7D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +234,12 @@
 				F4F10A7B1EB6BB6C00E5034C /* KontaktOssViewController.swift */,
 				AF4376CB1EB7EF2B00522E03 /* LoggInnViewController.swift */,
 				AF4376DE1EB8266100522E03 /* HovedmenyViewController.swift */,
+				AF45067B1EB9374900AE4FE7 /* TesterViewController.swift */,
+				AF45067D1EB937F400AE4FE7 /* ResultaterViewController.swift */,
+				AF45067F1EB9385500AE4FE7 /* OppdaterBrukerViewController.swift */,
+				AF4506811EB938C300AE4FE7 /* InstillingerViewController.swift */,
+				AF4506831EB9429900AE4FE7 /* RegistreringViewController.swift */,
+				AF4506851EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -420,15 +438,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF45067C1EB9374900AE4FE7 /* TesterViewController.swift in Sources */,
 				AF4376CC1EB7EF2B00522E03 /* LoggInnViewController.swift in Sources */,
 				AF4376DB1EB80EF800522E03 /* Networking.swift in Sources */,
+				AF4506861EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift in Sources */,
+				AF45067E1EB937F400AE4FE7 /* ResultaterViewController.swift in Sources */,
 				AF4376DF1EB8266100522E03 /* HovedmenyViewController.swift in Sources */,
+				AF4506841EB9429900AE4FE7 /* RegistreringViewController.swift in Sources */,
+				AF4506801EB9385500AE4FE7 /* OppdaterBrukerViewController.swift in Sources */,
 				AF4376C61EB7ECC300522E03 /* Testen.swift in Sources */,
 				F4C4DFE41EAA6CFB005CA7D0 /* AppDelegate.swift in Sources */,
 				AF4376BF1EB7EB0E00522E03 /* Regex.swift in Sources */,
 				AF4376D81EB7FCF500522E03 /* Popup.swift in Sources */,
 				F4F10A7C1EB6BB6C00E5034C /* KontaktOssViewController.swift in Sources */,
 				AF4376C41EB7EC4200522E03 /* TestInfo.swift in Sources */,
+				AF4506821EB938C300AE4FE7 /* InstillingerViewController.swift in Sources */,
 				F4C4E0121EAA6D1B005CA7D0 /* SplashScreenViewController.swift in Sources */,
 				AF4376C81EB7ED3500522E03 /* Tid.swift in Sources */,
 				AF4376CA1EB7ED9100522E03 /* Url.swift in Sources */,
