@@ -7,6 +7,7 @@
 //Klasse for å kunne velge blandt alle tester
 
 import UIKit
+import PopupDialog
 
 class BildeTesterViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 

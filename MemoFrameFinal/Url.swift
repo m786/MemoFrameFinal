@@ -31,6 +31,8 @@ class Url{
     private let sendInfo: String = "/api/users/sendInfo"
     //Bilde tester url
     private let bildeTester: String = "/api/test"
+    //Url for demo bilder
+    private let demo: String = "/api/images"
     
     var hovedlink: String{
         get{return baseUrl}
@@ -70,6 +72,10 @@ class Url{
     //Url for å få taki alle bildetester
     var BildeTesterUrl : String {
         get{return "\(baseUrl)\(bildeTester)"}
+    }
+    //Url for å demo
+    var demoUrl : String {
+        get{return "\(baseUrl)\(demo)"}
     }
 }
 

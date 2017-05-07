@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 import Alamofire_Synchronous
 
 
@@ -164,12 +165,14 @@ class Networking{
         
     let response = Alamofire.request(url.BildeTesterUrl,method: .post,headers:headers).responseJSON()
       print(response)
+        
         if let result = response.result.value {
             let JSON = result as! NSDictionary
             let err = JSON.object(forKey: "Error") as? Bool
             let msg = JSON.object(forKey: "Message") as! String
             
-         
+         print(err)
+            print(msg)
             if(!err!){
                  var tester = (JSON.object(forKey: "Tests") as? NSArray)!
                 return tester
@@ -178,4 +181,24 @@ class Networking{
         var tester :NSArray = []
         return tester
     }
+    
+    func demo(token:String)->NSArray{
+       
+        var bilder:[NSArray] = []
+        
+        let headers : HTTPHeaders = [
+            "x-access-token": token
+        ]
+     let response = Alamofire.request(url.demoUrl,method: .get,headers:headers).responseJSON()
+      
+        if let result = response.result.value {
+            let JSON = result as! NSDictionary
+            let images = JSON.object(forKey: "images") as? NSArray
+            return images!
+         
+          }
+        return bilder as NSArray
+    }
+    
+
 }
