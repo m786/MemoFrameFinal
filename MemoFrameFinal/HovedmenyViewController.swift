@@ -11,16 +11,28 @@ import UIKit
 class HovedmenyViewController: UIViewController {
 
     var brukerInfo : NSDictionary = [:]
+    var epost: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+  
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    private func brukerID()
+    {
+        for (k,v) in brukerInfo{
+            if(k as! String == "Email"){
+                epost = v as! String
+            }
+        }
     }
     
     @IBAction func taTester(_ sender: UIButton) {
@@ -38,7 +50,8 @@ class HovedmenyViewController: UIViewController {
     }
     @IBAction func loggUt(_ sender: UIButton) {
        brukerInfo = [:]
-       self.dismiss(animated: true, completion: nil)
+        epost = ""
+      
     }
   
     // forbereder data til å bli flyttet fra denne viewen tl en annen via en segue

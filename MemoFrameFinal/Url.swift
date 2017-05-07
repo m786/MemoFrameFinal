@@ -27,6 +27,10 @@ class Url{
     private let pinkode : String = "/api/pincode/login"
     //single test id url-husk å legge til id som parameter
     private let singleId : String = "/api/test/runde/"
+    //send info på mail ved registrerng av bruker
+    private let sendInfo: String = "/api/users/sendInfo"
+    //Bilde tester url
+    private let bildeTester: String = "/api/test"
     
     var hovedlink: String{
         get{return baseUrl}
@@ -59,7 +63,14 @@ class Url{
     var singleTestIdUrl : String {
         get{return "\(baseUrl)\(singleId)"}
     }
-    
+    //metode for å sende info på mail etter registrering
+    var sendInfoUrl : String {
+        get{return "\(baseUrl)\(sendInfo)"}
+    }
+    //Url for å få taki alle bildetester
+    var BildeTesterUrl : String {
+        get{return "\(baseUrl)\(bildeTester)"}
+    }
 }
 
 

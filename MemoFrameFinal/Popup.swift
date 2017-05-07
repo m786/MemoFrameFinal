@@ -48,7 +48,7 @@ class Popup: UIViewController {
         
         // opretter knapp
         let buttonOne = CancelButton(title: "OK") {
-            print("Feil.")
+            print("Ok knapp trykket i poupvindu.")
         }
         
         // Add buttons to dialog

@@ -4,13 +4,13 @@
 //
 //  Created by Muddasar Hussain on 03.05.2017.
 //  Copyright © 2017 Christopher Reyes. All rights reserved.
-//
+//Klasse for å registrerer bruker
 
 import UIKit
 
 class RegistreringViewController: UIViewController {
 
-    
+    //felter 
     @IBOutlet weak var epostFelt: UITextField!
     @IBOutlet weak var fodselsaarFelt: UITextField!
     @IBOutlet weak var passordFelt: UITextField!
@@ -75,7 +75,13 @@ class RegistreringViewController: UIViewController {
        var token = nodeJs.getToken()
        if(!token.isEmpty){
         var array = nodeJs.registrering(token: token, epost: epostFelt.text!, passord: passordFelt.text!, land: landFelt.text!, fodt: fodselsaarFelt.text!, kjonn: kjonnFelt.text!)
+        if(array.count == 0){
+        popupvindu.vis(fromController: self,melding: "Bruker finnes prøv igjen,eller kontakt admin.",tittel: "Noe gikk galt!")
+            return
+        }
+        else{
         self.performSegue(withIdentifier: "segueRegistreringTilbakemelding", sender: array)
+        }
         }
        else{
         popupvindu.vis(fromController: self,melding: "Prøv igjen,eller kontakt administrtor.",tittel: "Noe gikk galt!")

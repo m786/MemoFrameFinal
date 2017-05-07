@@ -76,6 +76,151 @@
             </objects>
             <point key="canvasLocation" x="-13" y="42"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="5FR-8R-M4I">
+            <objects>
+                <viewController id="rzb-8B-zXk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9dH-CR-lZn"/>
+                        <viewControllerLayoutGuide type="bottom" id="F1A-0w-RUY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a5R-fK-iOc">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HNz-J2-7s9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="-2883"/>
+        </scene>
+        <!--Bilde Tester View Controller-->
+        <scene sceneID="vpD-QX-e6p">
+            <objects>
+                <viewController id="WyE-qw-ect" customClass="BildeTesterViewController" customModule="MemoFrameFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HmU-CN-wuv"/>
+                        <viewControllerLayoutGuide type="bottom" id="5f7-NQ-zhv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jVf-q0-IxL">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bildetester" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa4-KY-ZSz">
+                                <rect key="frame" x="363" y="86" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Velg ønsket test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEQ-BM-BSS">
+                                <rect key="frame" x="78" y="155" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWQ-f9-vZ0">
+                                <rect key="frame" x="44" y="220" width="191" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Trykk her for å velge en test"/>
+                                <connections>
+                                    <action selector="liste:" destination="WyE-qw-ect" eventType="touchUpInside" id="24b-sW-kOc"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="31" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JAA-9I-Hto">
+                                <rect key="frame" x="44" y="258" width="240" height="454"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="31" id="vlQ-Ah-zLH">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="31"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vlQ-Ah-zLH" id="Xuj-hZ-Uo3">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="31"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WyE-qw-ect" id="RqY-A5-mHG"/>
+                                    <outlet property="delegate" destination="WyE-qw-ect" id="bSi-tl-9JF"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQP-Oq-DZE">
+                                <rect key="frame" x="110" y="783" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Ta valgt test"/>
+                                <connections>
+                                    <action selector="taTesten:" destination="WyE-qw-ect" eventType="touchUpInside" id="Fum-Sl-2km"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvX-zz-Del">
+                                <rect key="frame" x="320" y="974" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logg ut"/>
+                                <connections>
+                                    <action selector="loggUt:" destination="WyE-qw-ect" eventType="touchUpInside" id="PcJ-cP-4vb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXm-lQ-BqV">
+                                <rect key="frame" x="18" y="28" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Tilbake"/>
+                                <connections>
+                                    <segue destination="KyE-nz-Le0" kind="show" id="kIB-fF-SH6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="taTestenKnapp" destination="QQP-Oq-DZE" id="gk5-bY-3KW"/>
+                        <outlet property="tabell" destination="JAA-9I-Hto" id="r4D-Ub-jqt"/>
+                        <outlet property="velgTestKnapp" destination="lWQ-f9-vZ0" id="VBc-uc-zhR"/>
+                        <segue destination="rzb-8B-zXk" kind="show" identifier="spillet" id="dxq-bX-87B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0UU-np-oc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25.78125" y="-2141.015625"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CMK-VI-Hw0">
+            <objects>
+                <viewController id="99N-EF-wbS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tNU-la-Rex"/>
+                        <viewControllerLayoutGuide type="bottom" id="qKC-S4-h1Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dur-l5-bPr">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8mP-bw-AWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="-2134"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KI5-T3-Phm">
+            <objects>
+                <viewController id="W0H-Rv-7J9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gJt-yT-fBU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lph-o9-JEq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sjz-1u-F5C">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewH-gz-cIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1457" y="-2122"/>
+        </scene>
         <!--Tester View Controller-->
         <scene sceneID="92y-HL-wfg">
             <objects>
@@ -95,9 +240,49 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjx-Gu-TjY">
+                                <rect key="frame" x="122" y="258" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="BildeTester"/>
+                                <connections>
+                                    <action selector="bildeTester:" destination="KyE-nz-Le0" eventType="touchUpInside" id="3bF-2Y-7bV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdB-a2-jAk">
+                                <rect key="frame" x="388" y="258" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LydTester"/>
+                                <connections>
+                                    <action selector="lydTest:" destination="KyE-nz-Le0" eventType="touchUpInside" id="xas-f2-Puo"/>
+                                    <segue destination="99N-EF-wbS" kind="show" identifier="lydtester" id="4UJ-lE-k7x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UT7-hP-dQd">
+                                <rect key="frame" x="244" y="410" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Bilde og lyd"/>
+                                <connections>
+                                    <action selector="bildeLydTest:" destination="KyE-nz-Le0" eventType="touchUpInside" id="tto-cW-b3a"/>
+                                    <segue destination="W0H-Rv-7J9" kind="show" identifier="lydogbildetester" id="9ml-V8-CIe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-kP-aPJ">
+                                <rect key="frame" x="358" y="785" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logg ut"/>
+                                <connections>
+                                    <action selector="loggUt:" destination="KyE-nz-Le0" eventType="touchUpInside" id="zrB-Ol-bbk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="bildeOgLydKnapp" destination="UT7-hP-dQd" id="vgf-p2-QLA"/>
+                        <outlet property="bildeTestKnapp" destination="kjx-Gu-TjY" id="EWN-NY-P28"/>
+                        <outlet property="lydTestKnapp" destination="rdB-a2-jAk" id="xRy-gg-qfv"/>
+                        <segue destination="WyE-qw-ect" kind="show" identifier="bildeTestUtvalg" id="rSP-YX-eBS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rwb-9a-6ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2097,7 +2282,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3zN-BA-vyc"/>
-        <segue reference="j7M-0W-R61"/>
+        <segue reference="6Nu-7b-Yn3"/>
         <segue reference="u4P-Oi-yNb"/>
+        <segue reference="kIB-fF-SH6"/>
     </inferredMetricsTieBreakers>
 </document>

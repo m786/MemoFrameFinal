@@ -26,6 +26,8 @@
 		AF4506821EB938C300AE4FE7 /* InstillingerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4506811EB938C300AE4FE7 /* InstillingerViewController.swift */; };
 		AF4506841EB9429900AE4FE7 /* RegistreringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4506831EB9429900AE4FE7 /* RegistreringViewController.swift */; };
 		AF4506861EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4506851EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift */; };
+		AFD0AA0D1EBE84B0005BBF41 /* BildeTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0AA0C1EBE84AF005BBF41 /* BildeTesterViewController.swift */; };
+		AFD0AA0F1EBE9A13005BBF41 /* BildeTestenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0AA0E1EBE9A13005BBF41 /* BildeTestenViewController.swift */; };
 		B317CE373EBEA252E42C981D /* Pods_MemoFrameFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E91854DC53FE6691446062 /* Pods_MemoFrameFinal.framework */; };
 		F4C4DFE41EAA6CFB005CA7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4DFE31EAA6CFB005CA7D0 /* AppDelegate.swift */; };
 		F4C4DFE91EAA6CFB005CA7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C4DFE71EAA6CFB005CA7D0 /* Main.storyboard */; };
@@ -76,6 +78,8 @@
 		AF4506811EB938C300AE4FE7 /* InstillingerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstillingerViewController.swift; sourceTree = "<group>"; };
 		AF4506831EB9429900AE4FE7 /* RegistreringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistreringViewController.swift; sourceTree = "<group>"; };
 		AF4506851EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistreringTilbakemeldingViewController.swift; sourceTree = "<group>"; };
+		AFD0AA0C1EBE84AF005BBF41 /* BildeTesterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BildeTesterViewController.swift; sourceTree = "<group>"; };
+		AFD0AA0E1EBE9A13005BBF41 /* BildeTestenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BildeTestenViewController.swift; sourceTree = "<group>"; };
 		C359D6B0F7556DF01038DE3E /* Pods-MemoFrameFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoFrameFinal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoFrameFinal/Pods-MemoFrameFinal.debug.xcconfig"; sourceTree = "<group>"; };
 		F4C4DFE01EAA6CFA005CA7D0 /* MemoFrameFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoFrameFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C4DFE31EAA6CFB005CA7D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 				AF4506811EB938C300AE4FE7 /* InstillingerViewController.swift */,
 				AF4506831EB9429900AE4FE7 /* RegistreringViewController.swift */,
 				AF4506851EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift */,
+				AFD0AA0C1EBE84AF005BBF41 /* BildeTesterViewController.swift */,
+				AFD0AA0E1EBE9A13005BBF41 /* BildeTestenViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -438,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFD0AA0F1EBE9A13005BBF41 /* BildeTestenViewController.swift in Sources */,
 				AF45067C1EB9374900AE4FE7 /* TesterViewController.swift in Sources */,
 				AF4376CC1EB7EF2B00522E03 /* LoggInnViewController.swift in Sources */,
 				AF4376DB1EB80EF800522E03 /* Networking.swift in Sources */,
@@ -455,6 +462,7 @@
 				AF4506821EB938C300AE4FE7 /* InstillingerViewController.swift in Sources */,
 				F4C4E0121EAA6D1B005CA7D0 /* SplashScreenViewController.swift in Sources */,
 				AF4376C81EB7ED3500522E03 /* Tid.swift in Sources */,
+				AFD0AA0D1EBE84B0005BBF41 /* BildeTesterViewController.swift in Sources */,
 				AF4376CA1EB7ED9100522E03 /* Url.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

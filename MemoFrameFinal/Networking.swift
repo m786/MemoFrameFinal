@@ -78,20 +78,21 @@ class Networking{
     let parameters: Parameters = [
             "email": epost,
             "passord": passord,
-            "land":land,
-            "alder" : fodt,
+            "land": land,
+            "alder": Int(fodt),
             "kjonn": kjonn
         ]
         let headers : HTTPHeaders = [
             "x-access-token": token
         ]
-        
+       
         let response = Alamofire.request(url.addUserUrl,method: .post,parameters:parameters,headers:headers).responseJSON()
-            
+        
             if let result = response.result.value {
                 let JSON = result as! NSDictionary
                 let err = JSON.object(forKey: "Error") as! Bool
                 let msg = JSON.object(forKey: "Message") as! String
+                
                 //velykket registrering
                 if(!err){
                     
@@ -109,6 +110,7 @@ class Networking{
     //retunerer boolean verdi som forteller om infoen ble sendt eller ikke
     func sendInfo(data : [String:String],token : String)->Bool{
         
+        var status :Bool = false
         var parameters: Parameters = [
             "email":"",
             "passord": "",
@@ -138,11 +140,42 @@ class Networking{
                 parameters.updateValue(value, forKey: key)
             }
         }
-        
-        let response = Alamofire.request("http://www.gruppe18.tk:8080/api/users/sendInfo",method: .post,parameters:parameters,headers:headers)
-        
-        return true
+       
+        let response = Alamofire.request(url.sendInfoUrl,method: .post,parameters:parameters,headers:headers).responseJSON()
+     
+        if let result = response.result.value {
+            let JSON = result as! NSDictionary
+            let err = JSON.object(forKey: "Error") as? Bool
+            
+            if(!err!){
+                status = true
+            }
+        }
+
+        return status
         
     }
-
+    
+    func getBildeTester(token:String)->NSArray
+    {
+        let headers : HTTPHeaders = [
+            "x-access-token": token
+        ]
+        
+    let response = Alamofire.request(url.BildeTesterUrl,method: .post,headers:headers).responseJSON()
+      print(response)
+        if let result = response.result.value {
+            let JSON = result as! NSDictionary
+            let err = JSON.object(forKey: "Error") as? Bool
+            let msg = JSON.object(forKey: "Message") as! String
+            
+         
+            if(!err!){
+                 var tester = (JSON.object(forKey: "Tests") as? NSArray)!
+                return tester
+            }
+     }
+        var tester :NSArray = []
+        return tester
+    }
 }
