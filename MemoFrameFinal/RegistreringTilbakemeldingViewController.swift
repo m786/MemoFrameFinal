@@ -72,7 +72,6 @@ class RegistreringTilbakemeldingViewController: UIViewController {
      var token = nodeJs.getToken()
         
         if(!token.isEmpty){
-            sleep(2)
             if(nodeJs.sendInfo(data: sendData, token: token)){
                 
                 popupvindu.vis(fromController: self,melding: "Sjekk din epost for info du tastet inn.",tittel: "Grattlerer du er nå registrert!")

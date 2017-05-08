@@ -84,7 +84,7 @@ class RegistreringViewController: UIViewController {
         }
         }
        else{
-        popupvindu.vis(fromController: self,melding: "Prøv igjen,eller kontakt administrtor.",tittel: "Noe gikk galt!")
+        popupvindu.vis(fromController: self,melding: "Prøv igjen,eller kontakt administrator.",tittel: "Noe gikk galt!")
 
         }
         

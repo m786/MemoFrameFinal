@@ -144,6 +144,7 @@ class Networking{
        
         let response = Alamofire.request(url.sendInfoUrl,method: .post,parameters:parameters,headers:headers).responseJSON()
      
+        
         if let result = response.result.value {
             let JSON = result as! NSDictionary
             let err = JSON.object(forKey: "Error") as? Bool

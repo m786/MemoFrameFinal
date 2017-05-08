@@ -53,7 +53,13 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     let reuseIdentifier = "cell"
     
+    private var runder:Int = 7
+    
     var imageCounter: Int = 0
+    
+    private var hjelpeArray:[UIImage] = []
+    private var tomArray:[UIImage] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -93,19 +99,17 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
             var objCArray = NSMutableArray(array: image!)
             if let swiftArray = objCArray as NSArray as? [String] {
                 if(swiftArray.count>0){
-                    
                     for i in swiftArray{
                         Alamofire.request(i).responseImage { response in
-                            if let image = response.result.value {
+                             if let image = response.result.value {
                                 self.bilder.append(image)
                             }
                         }
                     }
-                }
+             }
             }
-            }
-            
-        }
+      }
+     }
     }
     
     private func random(size:Int)->Int{
@@ -113,10 +117,10 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
         let someInt:Int = Int(randomNum)
         return someInt
     }
-    
+    //metode for å ikke velge samme bilde for å vise
     private func sjekk(index:Int)->Int{
         var tall :Int = random(size: index)
-        var finnes:Bool = false
+       /* var finnes:Bool = false
         var ok:Bool = true
         
         if(valgteBilder.isEmpty){
@@ -135,13 +139,49 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
             tall = random(size: index)
             finnes = false
-        }
+        }*/
         return tall
     }
-    
-    
-    @IBAction func start(_ sender: UIButton) {
+    //kopierer arrays
+    func copyArrays(tomArray: inout [UIImage],originalArray:[UIImage]){
+        for i in originalArray{
+            tomArray.append(i)
+            
+        }
+    }
+    //Hjelpe metode som hjelper med å vise 4 og 4 bilder isteden for alt som kommer fra backend
+    func arrayBehandler()
+    {
+       
+        var i  :Int = 0
+        if(bilder.count == 0){
+         
+        copyArrays(tomArray: &bilder, originalArray: tomArray)
+        }
         
+        if(hjelpeArray.count == 0){
+        while i < 4{
+            if(i <= bilder.count-1){
+     
+        hjelpeArray.append(bilder.remove(at:0))
+                
+                        }
+            i += 1
+            }
+        }
+        else{
+            hjelpeArray = []
+            while i < 4{
+             
+                if(!bilder.isEmpty){
+                hjelpeArray.append(bilder.remove(at:0))
+                
+                }
+            i += 1
+            }
+        }
+    }
+    @IBAction func start(_ sender: UIButton) {
         label?.text = "Trykk på neste for å starte testen!"
         poeng.isHidden = false
         poengsum.isHidden = false
@@ -150,6 +190,7 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
         start.isHidden = true
         startKnapp = true
         neste.isHidden = false
+        copyArrays(tomArray: &tomArray, originalArray: bilder)
         self.neste.sendActions(for: UIControlEvents.touchUpInside)
     }
     
@@ -159,9 +200,10 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
         valgtBilde = bilder.count-1
         påBilde+=1
         bildeRamme.image = nil
-        bildenr.text = "\(påBilde) av \(bilder.count)"
-        bildeId = sjekk(index: bilder.count)
-        bildeRamme.image = bilder[bildeId!]
+        bildenr.text = "\(påBilde)" //"av \(bilder.count)"
+        arrayBehandler()
+        bildeId = sjekk(index: hjelpeArray.count)
+        bildeRamme.image = hjelpeArray[bildeId!]//bilder[bildeId!]
         neste.isHidden = true
         
         let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
@@ -188,7 +230,7 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        else if(påBilde>bilder.count-1){
+        else if(påBilde>=runder){
             if(self.bildeId == self.valgtBilde || self.bildeId == 0 && valgtBilde == nil){
                 self.poengBilde+=1
                 self.poengsum.text = "\(poengBilde)"
@@ -197,7 +239,7 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
             self.bildeRamme.image = nil
             self.collectionView.isHidden = true
             self.avslutt.isHidden = false
-            self.label?.text = "Du fikk totalt \(poengBilde) av antall \(bilder.count) poeng"
+            self.label?.text = "Du fikk totalt \(poengBilde) av antall \(runder) poeng"
         }
         else{
             self.neste.isHidden = false
@@ -219,12 +261,21 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBAction func avsluttDemo(_ sender: UIButton) {
+        self.label?.text = ""
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
     ////////////////////////// Collectionview ///////////////////////////////////////////////////////
     // MARK: - UICollectionViewDataSource protocol
     
     // Funksjonen som forteller hvor mange celler som skal lages
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.bilder.count
+        //return self.bilder.count
+        
+        return self.hjelpeArray.count
     }
     
     // lager 1 celle for hver celle index path
@@ -233,10 +284,12 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
         // getmetode for referanse i storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
         
-        cell.celleBilde.image = self.bilder[imageCounter]
+        //cell.celleBilde.image = self.bilder[imageCounter]
+        cell.celleBilde.image = self.hjelpeArray[imageCounter]
         // bruk outlet i klassen getmetode for en referanse av UILabel i cellen
+       //self.bilder.count
         self.imageCounter += 1
-        if self.imageCounter >= self.bilder.count {
+        if self.imageCounter >= self.hjelpeArray.count {
             
             self.imageCounter = 0
             
