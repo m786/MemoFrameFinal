@@ -164,7 +164,7 @@ class Networking{
             "x-access-token": token
         ]
         
-    let response = Alamofire.request(url.BildeTesterUrl,method: .post,headers:headers).responseJSON()
+    let response = Alamofire.request(url.BildeTesterUrl,method: .get,headers:headers).responseJSON()
       print(response)
         
         if let result = response.result.value {
@@ -172,7 +172,7 @@ class Networking{
             let err = JSON.object(forKey: "Error") as? Bool
             let msg = JSON.object(forKey: "Message") as! String
             
-         print(err)
+         
             print(msg)
             if(!err!){
                  var tester = (JSON.object(forKey: "Tests") as? NSArray)!

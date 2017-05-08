@@ -244,6 +244,9 @@
                                 <rect key="frame" x="13" y="49" width="90" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Avslutt demo"/>
+                                <connections>
+                                    <action selector="avsluttDemo:" destination="ufj-tg-o5j" eventType="touchUpInside" id="xSv-kN-ktY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Poeng:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fq-hy-1Ga">
                                 <rect key="frame" x="13" y="87" width="54" height="21"/>

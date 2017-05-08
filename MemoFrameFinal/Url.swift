@@ -31,8 +31,8 @@ class Url{
     private let sendInfo: String = "/api/users/sendInfo"
     //Bilde tester url
     private let bildeTester: String = "/api/test"
-    //Url for demo bilder
-    private let demo: String = "/api/images"
+    //Url for demo bilder for alltid 12 bilder
+    private let demo: String = "/api/images?number=12"
     
     var hovedlink: String{
         get{return baseUrl}
