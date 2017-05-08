@@ -17,7 +17,9 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
     
     //Tabell
     @IBOutlet weak var tabell: UITableView!
-    
+  
+    @IBOutlet weak var beskrivelse: UITextView!
+
     let popupvindu = Popup()
     var testnr : Int = 0
     var testObjekt : [TestInfo] = []
@@ -60,7 +62,9 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
                behandleArray(motattArray: array)
             }
             else{
-                popupvindu.vis(fromController: self,melding: "Ingen tester tilgjenglig,vennligst prøv igjen.",tittel:"Noe gikk galt!")
+                let alert = UIAlertController(title: "Melding", message: "Kunne ikke laste inn tester, vennligs kontakt admin,eller prøv igjen.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
             
         }
@@ -130,6 +134,9 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
         testnr = indexPath.row
         tabell.isHidden = true
         taTestenKnapp.isHidden = false
+        var b:String = testObjekt[testnr].toString()
+        beskrivelse.text = ""
+        beskrivelse.insertText(b)
     }
     
     // forbereder data til å bli flyttet fra denne viewen tl en annen via en segue
