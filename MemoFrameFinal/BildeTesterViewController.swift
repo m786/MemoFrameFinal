@@ -25,6 +25,7 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
     var testObjekt : [TestInfo] = []
     var array: [String] = []
     var brukerInfo : NSDictionary = [:]
+    var dataBrukerTester = testOgbrukerInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,7 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
                behandleArray(motattArray: array)
             }
             else{
+                print("Kunne ikke laste inn tester")
                 let alert = UIAlertController(title: "Melding", message: "Kunne ikke laste inn tester, vennligs kontakt admin,eller prøv igjen.", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
@@ -142,13 +144,13 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
     // forbereder data til å bli flyttet fra denne viewen tl en annen via en segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "sendInfo" {
+        if segue.identifier == "spillet" {
             
             if let destination = segue.destination as? BildeTestenViewController {
-                
                 // må være samme type som det variabelen som skal ta imot i det andre viewet
-                destination.testObjekt = sender as? TestInfo
-                destination.brukerInfo = self.brukerInfo
+                
+                destination.databrukerTester = sender as? testOgbrukerInfo
+               
             }
         }
     }
@@ -168,7 +170,10 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
     }
     //Ta valgt test
     @IBAction func taTesten(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "spillet", sender: testObjekt[testnr])
+        dataBrukerTester.testInfo = testObjekt[testnr]
+        dataBrukerTester.brukerInfo = brukerInfo
+        
+        self.performSegue(withIdentifier: "spillet", sender: dataBrukerTester)
     }
     
     //logg ut

@@ -33,6 +33,8 @@ class Url{
     private let bildeTester: String = "/api/test"
     //Url for demo bilder for alltid 12 bilder
     private let demo: String = "/api/images?number=12"
+    //Url for resette passord
+    private let reset:String = "/api/users/reset"
     
     var hovedlink: String{
         get{return baseUrl}
@@ -76,6 +78,10 @@ class Url{
     //Url for å demo
     var demoUrl : String {
         get{return "\(baseUrl)\(demo)"}
+    }
+    //Url for resette passord
+    var resetPassord :String{
+        get{return "\(baseUrl)\(reset)"}
     }
 }
 

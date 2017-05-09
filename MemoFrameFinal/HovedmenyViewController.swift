@@ -60,7 +60,6 @@ class HovedmenyViewController: UIViewController {
         if segue.identifier == "velgTester" {
             
             if let destination = segue.destination as? TesterViewController {
-                
                 // må være samme type som det variabelen som skal ta imot i det andre viewet
                 destination.brukerInfo = (sender as? NSDictionary!)!
             }

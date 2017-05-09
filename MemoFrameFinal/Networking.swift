@@ -157,7 +157,7 @@ class Networking{
         return status
         
     }
-    
+    //Får alle tester i database, er brukt i liste for å kunne velge blandt tester
     func getBildeTester(token:String)->NSArray
     {
         let headers : HTTPHeaders = [
@@ -165,16 +165,14 @@ class Networking{
         ]
         
     let response = Alamofire.request(url.BildeTesterUrl,method: .get,headers:headers).responseJSON()
-      print(response)
+     
         
         if let result = response.result.value {
             let JSON = result as! NSDictionary
             let err = JSON.object(forKey: "Error") as? Bool
             let msg = JSON.object(forKey: "Message") as! String
-            
-         
-            print(msg)
             if(!err!){
+               
                  var tester = (JSON.object(forKey: "Tests") as? NSArray)!
                 return tester
             }
@@ -183,6 +181,7 @@ class Networking{
         return tester
     }
     
+    //funksjon for å få bilder inn i demostrasjonen (view)
     func demo(token:String)->NSArray{
        
         var bilder:[NSArray] = []
@@ -201,5 +200,116 @@ class Networking{
         return bilder as NSArray
     }
     
-
+    //Når brukeren velger en test og går til view for å ta test kalles det på denne metoden
+    func getBilderPåValgtTest(token:String,testid:Int)->NSArray{
+        //Header
+        let headers : HTTPHeaders = [
+            "x-access-token": token
+            
+        ]
+        //parametere
+        let parameters: Parameters = [
+            "testid": String(testid)
+        ]
+        //kaller på backend metode for å få bilder på valgt test
+ let response = Alamofire.request(url.singleTestIdUrl,method: .get,parameters:parameters,headers:headers).responseJSON()
+        
+        var array:NSArray = []
+        
+        if let result = response.result.value {
+            let JSON = result as! NSDictionary
+            
+            let json = JSON.object(forKey: "Testrunder") as? NSArray
+            array = json!
+        }
+        return array
+    }
+    
+    //metode som lagrer resultatet i  databasen over nettet
+    func save(token:String,info:String,testid:Int,tid:String,poengBilde:Int,tiden:String)->Bool{
+        var ok:Bool = false
+        
+        //Header
+        let headers : HTTPHeaders = [
+            "x-access-token": token
+        ]
+        //parametere som blir sendt til backend
+        let parameters: Parameters = [
+            "email":info,
+            "testid":testid,
+            "tid_start":tid,
+            "poeng":poengBilde,
+            "tid_slutt":tiden
+        ]
+     let response =  Alamofire.request(url.lagreTestUrl,method: .post,parameters:parameters,headers:headers).responseJSON()
+        
+        if let result = response.result.value {
+            let JSON = result as! NSDictionary
+            let err = JSON.object(forKey: "Error") as! Bool
+            let msg = JSON.object(forKey: "Message") as! String
+            print(msg)
+            if(!err){
+            ok = true
+            }
+        }
+        return ok
+    }
+//pinkode logg inn
+    func loginnMedPin(token:String,pinKode:UITextField)->String{
+        var info:String = ""
+        let headers : HTTPHeaders = [
+            "x-access-token": token
+        ]
+        let parameters: Parameters = [
+            "kode": pinKode.text!
+        ]
+        let response =
+            Alamofire.request(url.pinkodeLoginnUrl,method: .post,parameters:parameters,headers:headers).responseJSON()
+        if let result = response.result.value {
+            let JSON = result as! NSDictionary
+            let err = JSON.object(forKey: "Error") as? Bool
+            let msg = JSON.object(forKey: "Message") as! String
+            
+            if(!err!){
+                //her skal man kunne gå til et annet view, kan bruke msg for å gi brukern melding om at bruker er lagt til.og token for å ta med videre.
+                let pinkode = JSON.object(forKey: "Pinkode") as? String
+                if let bruker = JSON.object(forKey: "User") as? Int{
+                info = String(bruker)
+                }
+            }
+        }
+      return info
+    }
+    
+    //Glemt passord
+    func glemtPassord(token:String,epostFelt:UITextField)->Bool{
+        var ok:Bool = false
+        let headers : HTTPHeaders = [
+            "x-access-token": token
+        ]
+        
+        let parameters: Parameters = [
+            "email": epostFelt.text!
+        ]
+let response =   Alamofire.request(url.resetPassord,method: .post,parameters:parameters,headers:headers).validate().responseJSON()
+        
+        if let result = response.result.value {
+            let JSON = result as! NSDictionary
+            let err = JSON.object(forKey: "Error") as! Bool
+            let msg = JSON.object(forKey: "Message") as! String
+            if(!err){
+                
+            ok = true
+       
+            }
+            else{
+            
+                return false
+                
+                
+            }
+        }
+        
+     return ok
+    }
 }

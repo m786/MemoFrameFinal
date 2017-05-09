@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF123E9A1EC2349800A76503 /* testOgbrukerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF123E991EC2349800A76503 /* testOgbrukerInfo.swift */; };
+		AF123E9C1EC25F8100A76503 /* KodeLoginnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF123E9B1EC25F8100A76503 /* KodeLoginnViewController.swift */; };
+		AF123E9E1EC2621C00A76503 /* LoggetInnMedKodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF123E9D1EC2621C00A76503 /* LoggetInnMedKodeViewController.swift */; };
+		AF123EA01EC26A6600A76503 /* GlemtPassordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF123E9F1EC26A6600A76503 /* GlemtPassordViewController.swift */; };
 		AF4376BF1EB7EB0E00522E03 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376BE1EB7EB0E00522E03 /* Regex.swift */; };
 		AF4376C41EB7EC4200522E03 /* TestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376C31EB7EC4200522E03 /* TestInfo.swift */; };
 		AF4376C61EB7ECC300522E03 /* Testen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376C51EB7ECC300522E03 /* Testen.swift */; };
@@ -62,6 +66,10 @@
 /* Begin PBXFileReference section */
 		30E91854DC53FE6691446062 /* Pods_MemoFrameFinal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoFrameFinal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1F105B3169832BFF35182D /* Pods-MemoFrameFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoFrameFinal.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoFrameFinal/Pods-MemoFrameFinal.release.xcconfig"; sourceTree = "<group>"; };
+		AF123E991EC2349800A76503 /* testOgbrukerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testOgbrukerInfo.swift; sourceTree = "<group>"; };
+		AF123E9B1EC25F8100A76503 /* KodeLoginnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KodeLoginnViewController.swift; sourceTree = "<group>"; };
+		AF123E9D1EC2621C00A76503 /* LoggetInnMedKodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggetInnMedKodeViewController.swift; sourceTree = "<group>"; };
+		AF123E9F1EC26A6600A76503 /* GlemtPassordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlemtPassordViewController.swift; sourceTree = "<group>"; };
 		AF4376BE1EB7EB0E00522E03 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		AF4376C31EB7EC4200522E03 /* TestInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestInfo.swift; sourceTree = "<group>"; };
 		AF4376C51EB7ECC300522E03 /* Testen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Testen.swift; sourceTree = "<group>"; };
@@ -234,6 +242,7 @@
 				AF4376D71EB7FCF500522E03 /* Popup.swift */,
 				AF4376DA1EB80EF800522E03 /* Networking.swift */,
 				AFDF378F1EBF554B00F16C91 /* CollectionViewCell.swift */,
+				AF123E991EC2349800A76503 /* testOgbrukerInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -255,6 +264,9 @@
 				AFD0AA0E1EBE9A13005BBF41 /* BildeTestenViewController.swift */,
 				AFDF378B1EBF43D900F16C91 /* DemoViewController.swift */,
 				AFDF378D1EBF54E200F16C91 /* CollectionViewController.swift */,
+				AF123E9B1EC25F8100A76503 /* KodeLoginnViewController.swift */,
+				AF123E9D1EC2621C00A76503 /* LoggetInnMedKodeViewController.swift */,
+				AF123E9F1EC26A6600A76503 /* GlemtPassordViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -466,15 +478,19 @@
 				AF4376C61EB7ECC300522E03 /* Testen.swift in Sources */,
 				AFDF378E1EBF54E200F16C91 /* CollectionViewController.swift in Sources */,
 				F4C4DFE41EAA6CFB005CA7D0 /* AppDelegate.swift in Sources */,
+				AF123EA01EC26A6600A76503 /* GlemtPassordViewController.swift in Sources */,
 				AF4376BF1EB7EB0E00522E03 /* Regex.swift in Sources */,
+				AF123E9C1EC25F8100A76503 /* KodeLoginnViewController.swift in Sources */,
 				AF4376D81EB7FCF500522E03 /* Popup.swift in Sources */,
 				F4F10A7C1EB6BB6C00E5034C /* KontaktOssViewController.swift in Sources */,
 				AF4376C41EB7EC4200522E03 /* TestInfo.swift in Sources */,
 				AF4506821EB938C300AE4FE7 /* InstillingerViewController.swift in Sources */,
 				F4C4E0121EAA6D1B005CA7D0 /* SplashScreenViewController.swift in Sources */,
+				AF123E9E1EC2621C00A76503 /* LoggetInnMedKodeViewController.swift in Sources */,
 				AF4376C81EB7ED3500522E03 /* Tid.swift in Sources */,
 				AFDF378C1EBF43D900F16C91 /* DemoViewController.swift in Sources */,
 				AFD0AA0D1EBE84B0005BBF41 /* BildeTesterViewController.swift in Sources */,
+				AF123E9A1EC2349800A76503 /* testOgbrukerInfo.swift in Sources */,
 				AF4376CA1EB7ED9100522E03 /* Url.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -60,7 +60,7 @@ class TestInfo {
     }
     
     func toString()-> String{
-        return "Test: \(_testnavn) \nGyldig: \(String(_gyldig)) \nTestId: \(String(_testid))\nOppgavetekst: \(_oppgavetekst) \nTestbeskrivelse: \(_testbeskrivelse) \nDelaytid: \(_tidsdelay) \nVanskelighetsgrad: \(_vanskelighetsgrad)\nRunder: \(_runder)"
+        return "Test: \(_testnavn) \nGyldig: \(String(_gyldig)) \nTestId: \(String(_testid))\nOppgavetekst: \(_oppgavetekst) \nTestbeskrivelse: \(_testbeskrivelse) \nDelaytid: \(_tidsdelay) \nVanskelighetsgrad: \(_vanskelighetsgrad) \nRunder: \(_runder)"
     }
     
 }
