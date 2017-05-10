@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import Alamofire_Synchronous
 
 class BildeTestenViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
@@ -19,6 +20,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
     
     var info: String = ""
     var token:String = ""
+    var runder :Int = 0
     
     //CollectionView her vises alternativer
     @IBOutlet weak var collectionView: UICollectionView!
@@ -47,11 +49,14 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
     private var valgteBilder : [Int] = []
     let reuseIdentifier = "cell"
     var imageCounter: Int = 0
+    private var hjelpeArray:[UIImage] = []
+    private var tomArray:[UIImage] = []
     private var testRunder: [Testen] = []
     var tiden = Tid()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startKnapp.isHidden = true
         collectionView.isHidden = true
         nesteKnapp.isHidden = true
         avsluttKnapp.isHidden = true
@@ -64,6 +69,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
         separereTokenOgEmail(data: brukerInfo)
         tekst()
         startGame()
+        initBilder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,7 +80,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
     private func tekst(){
         bildeRamme.backgroundColor = UIColor.white
         label = UILabel(frame: bildeRamme.bounds)
-        label?.text = "Her komer intro tekst"
+        label?.text = "Hei og velkommen til testen, her vil du først se et bilde "
         bildeRamme.addSubview(label!)
     }
 
@@ -97,6 +103,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
             }
             else{
                 print("json bilder feilet")
+                return
             }
         }
     }
@@ -105,7 +112,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
     {
         for i in json
         {
-            print("json tester")
+           
             var test = Testen()
             if let data = i as? NSDictionary{
                 
@@ -128,6 +135,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
                 }
                 
             }
+            runder += 1
             self.testRunder.append(test)
         }
     }
@@ -202,11 +210,9 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
     private func initBilder(){
         
         for i in testRunder{
-            print(i)
             //if(i.rundenr == 1){
                 for j in i.bilder{
-                    print(j)
-                    Alamofire.request(j).responseImage { response in
+                   let res =  Alamofire.request(j).responseImage { response in
                         print(response)
                         if let image = response.result.value {
                             self.bilder.append(image)
@@ -214,11 +220,73 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
                             print(i)
                         }
                     }
+                    res.downloadProgress(queue: DispatchQueue.global(qos: .default)) { progress in
+                        // Codes at here will not be delayed
+                        print("Download Progress: \(progress.fractionCompleted)")
+                        
+                        DispatchQueue.main.async {
+                            // code at here will be delayed before the synchronous finished.
+                            self.startKnapp.isHidden = false
+                        }
+                        
+                    }.response()
+                    
+                    if let error = res.responseData().error {
+                        print("Failed with error: \(error)")
+                    }else{
+                        print("Downloaded file successfully")
+                    }
                 }
             //}
         }
      }
+    
+    //Koperer original array for bruk av den senere
+    //kopierer arrays
+    func copyArrays(tomArray: inout [UIImage],originalArray:[UIImage]){
+        for i in originalArray{
+            tomArray.append(i)
+            
+        }
+    }
+    //Hjelpe metode som hjelper med å vise 4 og 4 bilder isteden for alt som kommer fra backend
+    func arrayBehandler()
+    {
+        
+        var i  :Int = 0
+        if(bilder.count == 0){
+            
+            copyArrays(tomArray: &bilder, originalArray: tomArray)
+        }
+        
+        if(hjelpeArray.count == 0){
+            while i < 4{
+                if(i <= bilder.count-1){
+                    
+                    hjelpeArray.append(bilder.remove(at:0))
+                    
+                }
+                i += 1
+            }
+        }
+        else{
+            hjelpeArray = []
+            while i < 4{
+                
+                if(!bilder.isEmpty){
+                    hjelpeArray.append(bilder.remove(at:0))
+                    
+                }
+                i += 1
+            }
+        }
+    }
 ////////////////////////////////////////////// Knapper ///////////////////////////////////////////////
+    @IBAction func avsluttTesten(_ sender: UIButton) {
+        lagreResultat()
+        self.label?.text = ""
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func start(_ sender: UIButton) {
         label?.text = "Trykk på neste for å starte testen!"
@@ -228,9 +296,11 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
         bildenr.isHidden = false
         startKnapp.isHidden = true
         // startKnapp = true
-        initBilder()
+        //initBilder()
         nesteKnapp.isHidden = false
         tiden.startTiden()
+          copyArrays(tomArray: &tomArray, originalArray: bilder)
+          self.nesteKnapp.sendActions(for: UIControlEvents.touchUpInside)
 
     }
     
@@ -240,14 +310,17 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
         valgtBilde = bilder.count-1
         påBilde+=1
         bildeRamme.image = nil
-        bildenr.text = "\(påBilde) av \(bilder.count)"
-        bildeId = sjekk(index: bilder.count)
-        bildeRamme.image = bilder[bildeId!]
+        bildenr.text = "\(påBilde) av \(runder)"
+        arrayBehandler()
+        bildeId = sjekk(index: hjelpeArray.count)
+        
+        bildeRamme.image = hjelpeArray[bildeId!]
         nesteKnapp.isHidden = true
         
         let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             self.bildeRamme.image = nil
+             self.label?.text = "Vennligs vent"
             
         }
         let when1 = DispatchTime.now() + 4 //etter at det har gått 4 sec fra den metoden over
@@ -256,7 +329,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
             self.collectionView.reloadData()
             
             self.nesteKnapp.isHidden = true
-            self.svarKnapp.isHidden = false
+            //self.svarKnapp.isHidden = false
             
         }
     }
@@ -271,7 +344,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
             self.bildeRamme.image = nil
             nesteKnapp.sendActions(for: UIControlEvents.touchUpInside)
         }
-        else if(påBilde>bilder.count-1){
+        else if(påBilde>=runder){
             if(self.bildeId == self.valgtBilde || self.bildeId == 0 && valgtBilde == nil){
                 self.poengBilde+=1
                 self.poeng.text = "\(poengBilde)"
@@ -280,7 +353,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
             self.bildeRamme.image = nil
             self.avsluttKnapp.isHidden = false
             self.collectionView.isHidden = true
-            self.label?.text = "Du fikk totalt \(poengBilde) av antall \(bilder.count) poeng"
+            self.label?.text = "Du fikk totalt \(poengBilde) av antall \(runder) poeng"
             tiden.stopTiden()
         }
         else{
@@ -300,6 +373,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
     
     @IBAction func avslutt(_ sender: UIButton) {
         lagreResultat()
+        self.label?.text = ""
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -308,7 +382,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
     
     // Funksjonen som forteller hvor mange celler som skal lages
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.bilder.count
+        return self.hjelpeArray.count
     }
     
     // lager 1 celle for hver celle index path
@@ -317,10 +391,10 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
         // getmetode for referanse i storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
         
-        cell.celleBilde.image = self.bilder[imageCounter]
+        cell.celleBilde.image = self.hjelpeArray[imageCounter]
         // bruk outlet i klassen getmetode for en referanse av UILabel i cellen
         self.imageCounter += 1
-        if self.imageCounter >= self.bilder.count {
+        if self.imageCounter >= self.hjelpeArray.count {
             
             self.imageCounter = 0
             

@@ -112,6 +112,7 @@ class Networking{
     func sendInfo(data : [String:String],token : String)->Bool{
         
         var status :Bool = false
+        
         var parameters: Parameters = [
             "email":"",
             "passord": "",
@@ -121,7 +122,7 @@ class Networking{
         ]
         
         let headers : HTTPHeaders = [
-            "newUser":token
+            "x-access-token": token
         ]
         
         for (key, value) in data {
@@ -143,8 +144,7 @@ class Networking{
         }
        
         let response = Alamofire.request(url.sendInfoUrl,method: .post,parameters:parameters,headers:headers).responseJSON()
-     
-        
+        print(response)
         if let result = response.result.value {
             let JSON = result as! NSDictionary
             let err = JSON.object(forKey: "Error") as? Bool
@@ -292,12 +292,12 @@ class Networking{
             "email": epostFelt.text!
         ]
 let response =   Alamofire.request(url.resetPassord,method: .post,parameters:parameters,headers:headers).validate().responseJSON()
-        
+        print(response)
         if let result = response.result.value {
             let JSON = result as! NSDictionary
             let err = JSON.object(forKey: "Error") as! Bool
             let msg = JSON.object(forKey: "Message") as! String
-            if(!err){
+            if(err){
                 
             ok = true
        
@@ -311,5 +311,42 @@ let response =   Alamofire.request(url.resetPassord,method: .post,parameters:par
         }
         
      return ok
+    }
+    
+    //Kontakt oss
+    func kontaktOss(token:String,tilbakemelding:UITextView,epost:UITextField)->Bool{
+         var ok = false
+        let parameters: Parameters = [
+            "email": epost.text!,
+            "melding": tilbakemelding.text!
+        ]
+        
+        let headers : HTTPHeaders = [
+            "x-access-token": token
+        ]
+         let response = Alamofire.request(url.kontaktOssUrl,method: .post,parameters:parameters,headers:headers).responseJSON()
+        
+        if let result = response.result.value {
+            let JSON = result as! NSDictionary
+            let err = JSON.object(forKey: "Error") as! Bool
+            let msg = JSON.object(forKey: "Message") as! String
+            if(!err){
+            ok = true
+            }
+        }
+        return ok
+    }
+    
+    //endre passord med email aderesse
+    func endrePassord(token:String,nyPassord:UITextField,epost:UITextField){
+        let headers : HTTPHeaders = [
+            "x-access-token": token
+        ]
+        let parameters: Parameters = [
+            "passord": nyPassord.text!,
+            "email": epost.text!
+        ]
+           let response = Alamofire.request(url.addUserUrl,method: .put,parameters:parameters,headers:headers).responseJSON()
+        print(response)
     }
 }

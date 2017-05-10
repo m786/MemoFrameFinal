@@ -17,4 +17,10 @@ pod 'SwiftyJSON'
 
 pod 'PopupDialog', '~> 0.5'
 
+pod 'FacebookCore'
+
+pod 'FacebookLogin'
+
+pod 'FacebookShare'
+
 end

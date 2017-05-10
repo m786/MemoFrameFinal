@@ -72,11 +72,11 @@ class RegistreringTilbakemeldingViewController: UIViewController {
      var token = nodeJs.getToken()
         
         if(!token.isEmpty){
-            if(nodeJs.sendInfo(data: sendData, token: token)){
+            var ok = nodeJs.sendInfo(data: sendData, token: token)
+            if(ok){
                 
-                popupvindu.vis(fromController: self,melding: "Sjekk din epost for info du tastet inn.",tittel: "Grattlerer du er nå registrert!")
-                sendKnapp.isHidden = true
-                
+            sendKnapp.isHidden = true
+               popupvindu.vis(fromController: self,melding: "Sjekk din epost for din bruker info.",tittel: "Email sendt!") 
             }else{
              popupvindu.vis(fromController: self,melding: "Sjekk din epost for info du tastet inn.",tittel: "Meil med info kunne ikke sendes")
             }

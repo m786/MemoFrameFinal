@@ -30,6 +30,13 @@
 		AF4506821EB938C300AE4FE7 /* InstillingerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4506811EB938C300AE4FE7 /* InstillingerViewController.swift */; };
 		AF4506841EB9429900AE4FE7 /* RegistreringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4506831EB9429900AE4FE7 /* RegistreringViewController.swift */; };
 		AF4506861EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4506851EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift */; };
+		AFCC3AB21EC3C08D0060928B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3AB11EC3C08D0060928B /* FBSDKShareKit.framework */; };
+		AFCC3AB41EC3C09B0060928B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3AB31EC3C09B0060928B /* FBSDKLoginKit.framework */; };
+		AFCC3AB61EC3C0A20060928B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3AB51EC3C0A20060928B /* FBSDKCoreKit.framework */; };
+		AFCC3AB81EC3C0AA0060928B /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3AB71EC3C0AA0060928B /* FacebookCore.framework */; };
+		AFCC3ABA1EC3C0AE0060928B /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3AB91EC3C0AE0060928B /* FacebookShare.framework */; };
+		AFCC3ABC1EC3C0B40060928B /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3ABB1EC3C0B40060928B /* FacebookLogin.framework */; };
+		AFCC3ABE1EC3C0C70060928B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3ABD1EC3C0C70060928B /* Bolts.framework */; };
 		AFD0AA0D1EBE84B0005BBF41 /* BildeTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0AA0C1EBE84AF005BBF41 /* BildeTesterViewController.swift */; };
 		AFD0AA0F1EBE9A13005BBF41 /* BildeTestenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0AA0E1EBE9A13005BBF41 /* BildeTestenViewController.swift */; };
 		AFDF378C1EBF43D900F16C91 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDF378B1EBF43D900F16C91 /* DemoViewController.swift */; };
@@ -89,6 +96,13 @@
 		AF4506811EB938C300AE4FE7 /* InstillingerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstillingerViewController.swift; sourceTree = "<group>"; };
 		AF4506831EB9429900AE4FE7 /* RegistreringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistreringViewController.swift; sourceTree = "<group>"; };
 		AF4506851EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistreringTilbakemeldingViewController.swift; sourceTree = "<group>"; };
+		AFCC3AB11EC3C08D0060928B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		AFCC3AB31EC3C09B0060928B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		AFCC3AB51EC3C0A20060928B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		AFCC3AB71EC3C0AA0060928B /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = "../../Library/Developer/Xcode/DerivedData/MemoFrameFinal-fyfuikeqlgmytifbwzgdzgolcltj/Build/Products/Debug-iphonesimulator/FacebookCore/FacebookCore.framework"; sourceTree = "<group>"; };
+		AFCC3AB91EC3C0AE0060928B /* FacebookShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookShare.framework; path = "../../Library/Developer/Xcode/DerivedData/MemoFrameFinal-fyfuikeqlgmytifbwzgdzgolcltj/Build/Products/Debug-iphonesimulator/FacebookShare/FacebookShare.framework"; sourceTree = "<group>"; };
+		AFCC3ABB1EC3C0B40060928B /* FacebookLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookLogin.framework; path = "../../Library/Developer/Xcode/DerivedData/MemoFrameFinal-fyfuikeqlgmytifbwzgdzgolcltj/Build/Products/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework"; sourceTree = "<group>"; };
+		AFCC3ABD1EC3C0C70060928B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts/Bolts.framework"; sourceTree = "<group>"; };
 		AFD0AA0C1EBE84AF005BBF41 /* BildeTesterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BildeTesterViewController.swift; sourceTree = "<group>"; };
 		AFD0AA0E1EBE9A13005BBF41 /* BildeTestenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BildeTestenViewController.swift; sourceTree = "<group>"; };
 		AFDF378B1EBF43D900F16C91 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +130,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCC3ABE1EC3C0C70060928B /* Bolts.framework in Frameworks */,
+				AFCC3ABC1EC3C0B40060928B /* FacebookLogin.framework in Frameworks */,
+				AFCC3ABA1EC3C0AE0060928B /* FacebookShare.framework in Frameworks */,
+				AFCC3AB81EC3C0AA0060928B /* FacebookCore.framework in Frameworks */,
+				AFCC3AB61EC3C0A20060928B /* FBSDKCoreKit.framework in Frameworks */,
+				AFCC3AB41EC3C09B0060928B /* FBSDKLoginKit.framework in Frameworks */,
+				AFCC3AB21EC3C08D0060928B /* FBSDKShareKit.framework in Frameworks */,
 				AF4376DD1EB8104500522E03 /* Alamofire_Synchronous.framework in Frameworks */,
 				AF4376D91EB8013400522E03 /* PopupDialog.framework in Frameworks */,
 				AF4376D21EB7FBAF00522E03 /* AlamofireImage.framework in Frameworks */,
@@ -144,6 +165,13 @@
 		902690F8F6DDD3C73B0A9ABE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFCC3ABD1EC3C0C70060928B /* Bolts.framework */,
+				AFCC3ABB1EC3C0B40060928B /* FacebookLogin.framework */,
+				AFCC3AB91EC3C0AE0060928B /* FacebookShare.framework */,
+				AFCC3AB71EC3C0AA0060928B /* FacebookCore.framework */,
+				AFCC3AB51EC3C0A20060928B /* FBSDKCoreKit.framework */,
+				AFCC3AB31EC3C09B0060928B /* FBSDKLoginKit.framework */,
+				AFCC3AB11EC3C08D0060928B /* FBSDKShareKit.framework */,
 				AF4376DC1EB8104500522E03 /* Alamofire_Synchronous.framework */,
 				AF4376D31EB7FBB600522E03 /* PopupDialog.framework */,
 				AF4376D11EB7FBAF00522E03 /* AlamofireImage.framework */,
@@ -644,6 +672,13 @@
 			baseConfigurationReference = C359D6B0F7556DF01038DE3E /* Pods-MemoFrameFinal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
+				);
 				INFOPLIST_FILE = MemoFrameFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.MemoFrameFinal;
@@ -657,6 +692,13 @@
 			baseConfigurationReference = 7A1F105B3169832BFF35182D /* Pods-MemoFrameFinal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
+				);
 				INFOPLIST_FILE = MemoFrameFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.MemoFrameFinal;

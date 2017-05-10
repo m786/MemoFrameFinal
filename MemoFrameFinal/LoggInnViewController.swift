@@ -8,6 +8,8 @@
 
 import UIKit
 import PopupDialog
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoggInnViewController: UIViewController {
     //felter
@@ -15,6 +17,9 @@ class LoggInnViewController: UIViewController {
     @IBOutlet weak var passord: UITextField!
     
      let popupvindu = Popup()
+    //FaceBook
+    var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+    var fbresult: Any?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +72,34 @@ class LoggInnViewController: UIViewController {
         
       
     }
-
+     //Logge inn med facebook
+    @IBAction func fbLoggInn(_ sender: AnyObject) {
+        fbLoginManager .logIn(withReadPermissions: ["email"], handler: { (result, error) -> Void in
+            if (error == nil){
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                
+                if(fbloginresult.grantedPermissions.contains("email"))
+                {
+                    self.getFBUserData()
+                    var array = ["Token":FBSDKAccessToken.current().tokenString,"Result":self.fbresult]
+                    self.performSegue(withIdentifier: "Innlogget", sender: array)
+                    // fbLoginManager.logOut()
+                }
+            }
+        })
+        
+    }
+    //Hjelpemetode for facebook for å få info bruker
+    func getFBUserData(){
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    self.fbresult = result
+                    print(result)
+                }
+            })
+        }
+    }
     // forbereder data til å bli flyttet fra denne viewen tl en annen via en segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
