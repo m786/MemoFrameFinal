@@ -1,0 +1,28 @@
+{
+  "commitish" : "1.8.4",
+  "iOS" : [
+    {
+      "name" : "Bolts",
+      "md5" : "0bae120d87d96a6dd726ccd2f5fc44fb"
+    }
+  ],
+  "xcodeVersion" : "Xcode 8.3.1\nBuild version 8E1000a",
+  "watchOS" : [
+    {
+      "name" : "Bolts",
+      "md5" : "686f348af349d62c0b5ea4d53bf7a83e"
+    }
+  ],
+  "tvOS" : [
+    {
+      "name" : "Bolts",
+      "md5" : "07dbbb2368a2c9b65e0774c97885e177"
+    }
+  ],
+  "Mac" : [
+    {
+      "name" : "Bolts",
+      "md5" : "e6b86c0a34ff4e55af6e7cf920045c12"
+    }
+  ]
+}

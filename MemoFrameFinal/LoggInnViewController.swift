@@ -82,6 +82,7 @@ class LoggInnViewController: UIViewController {
                 {
                     self.getFBUserData()
                     var array = ["Token":FBSDKAccessToken.current().tokenString,"Result":self.fbresult]
+                    print(array)
                     self.performSegue(withIdentifier: "Innlogget", sender: array)
                     // fbLoginManager.logOut()
                 }
@@ -95,7 +96,6 @@ class LoggInnViewController: UIViewController {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     self.fbresult = result
-                    print(result)
                 }
             })
         }

@@ -1,0 +1,19 @@
+{
+  "commitish" : "0.5.4",
+  "iOS" : [
+    {
+      "name" : "PopupDialog",
+      "md5" : "98b78e26c0898c92fb090ebf3baa5676"
+    }
+  ],
+  "xcodeVersion" : "Xcode 8.3.1\nBuild version 8E1000a",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "Mac" : [
+
+  ]
+}
