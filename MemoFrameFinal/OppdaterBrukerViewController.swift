@@ -17,8 +17,8 @@ class OppdaterBrukerViewController: UIViewController {
     @IBOutlet weak var epostFelten: UITextField!
     @IBOutlet weak var epostFeltto: UITextField!
     @IBOutlet weak var gammelPassord: UITextField!
-    
     @IBOutlet weak var nyPassord: UITextField!
+    
     let popupvindu = Popup()
     
     override func viewDidLoad() {

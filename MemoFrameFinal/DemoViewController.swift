@@ -66,11 +66,11 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView.isHidden = true
         neste.isHidden = true
         avslutt.isHidden = true
-        poeng.isHidden = true
-        poengsum.isHidden = true
         bilde.isHidden = true
         bildenr.isHidden = true
         svar.isHidden = true
+        poeng.isHidden = true
+        poengsum.isHidden = true
         tekst()
         startGame()
     }
@@ -83,12 +83,15 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
     private func tekst(){
         bildeRamme.backgroundColor = UIColor.white
         label = UILabel(frame: bildeRamme.bounds)
-        label?.text = "Hei og velkommen til demoen, her vil du først se et bilde "
+        label?.font = UIFont(name: "Futura-Medium", size: 50)!
+        label?.text = "Hei og velkommen til testen! Du vil bli presentert med et bilde. Trykk på det samme bilde blant alternativene som vises etterpå."
+        label?.textAlignment = .center
+        label?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label?.numberOfLines = 10
         bildeRamme.addSubview(label!)
     }
     
     private func startGame(){
-        
         
         var nodeJs = Networking()
         var token = nodeJs.getToken()
@@ -195,12 +198,14 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @IBAction func neste(_ sender: UIButton) {
+        poengsum.isHidden = true
+        poeng.isHidden = true
         label?.text = ""
         collectionView.isHidden = true
         valgtBilde = bilder.count-1
         påBilde+=1
         bildeRamme.image = nil
-        bildenr.text = "\(påBilde)" //"av \(bilder.count)"
+        bildenr.text = "\(påBilde) av \(runder)"
         arrayBehandler()
         bildeId = sjekk(index: hjelpeArray.count)
         bildeRamme.image = hjelpeArray[bildeId!]//bilder[bildeId!]
@@ -209,7 +214,7 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
         let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             self.bildeRamme.image = nil
-            self.label?.text = "Vennligs vent"
+            self.label?.text = "Vennligs vent..."
         }
         let when1 = DispatchTime.now() + 4 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when1) {

@@ -72,6 +72,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
         initBilder()
     }
 
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,8 +81,14 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
     private func tekst(){
         bildeRamme.backgroundColor = UIColor.white
         label = UILabel(frame: bildeRamme.bounds)
-        label?.text = "Hei og velkommen til testen, her vil du først se et bilde "
+        label?.font = UIFont(name: "Futura-Medium", size: 50)!
+        label?.text = "Hei og velkommen til testen! Du vil bli presentert med et bilde. Trykk på det samme bilde blant alternativene som vises etterpå."
+        label?.textAlignment = .center
+        label?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label?.numberOfLines = 10
+            
         bildeRamme.addSubview(label!)
+        
     }
 
     //behandle motatt data fra view
@@ -289,9 +296,10 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     @IBAction func start(_ sender: UIButton) {
+        
         label?.text = "Trykk på neste for å starte testen!"
-        poengLabel.isHidden = false
-        poeng.isHidden = false
+        poengLabel.isHidden = true
+        poeng.isHidden = true
         opgaveLabel.isHidden = false
         bildenr.isHidden = false
         startKnapp.isHidden = true
@@ -320,7 +328,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
         let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             self.bildeRamme.image = nil
-             self.label?.text = "Vennligs vent"
+             self.label?.text = "Vennligst vent..."
             
         }
         let when1 = DispatchTime.now() + 4 //etter at det har gått 4 sec fra den metoden over
@@ -353,7 +361,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
             self.bildeRamme.image = nil
             self.avsluttKnapp.isHidden = false
             self.collectionView.isHidden = true
-            self.label?.text = "Du fikk totalt \(poengBilde) av antall \(runder) poeng"
+            self.label?.text = "Du fikk totalt \(poengBilde) riktige av \(runder) runder."
             tiden.stopTiden()
         }
         else{
