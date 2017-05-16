@@ -76,13 +76,13 @@ class RegistreringTilbakemeldingViewController: UIViewController {
             if(ok){
                 
             sendKnapp.isHidden = true
-               popupvindu.vis(fromController: self,melding: "Sjekk din epost for din bruker info.",tittel: "Email sendt!") 
+               popupvindu.vis(fromController: self,melding: "Vennligst sjekk din epost for din bruker info.",tittel: "Email sendt!")
             }else{
-             popupvindu.vis(fromController: self,melding: "Sjekk din epost for info du tastet inn.",tittel: "Meil med info kunne ikke sendes")
+             popupvindu.vis(fromController: self,melding: "Vennligst sjekk din epost for info du tastet inn.",tittel: "Mail med info kunne ikke sendes")
             }
         }else{
         
-            popupvindu.vis(fromController: self,melding: "Prøv igjen,eller kontakt administrtor token feil.",tittel: "Noe gikk galt!")
+            popupvindu.vis(fromController: self,melding: "Det oppstod en feil. Prøv igjen, eller kontakt administrator.",tittel: "!")
         }
     }
     

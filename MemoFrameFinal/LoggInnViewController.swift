@@ -15,6 +15,7 @@ class LoggInnViewController: UIViewController {
     //felter
     @IBOutlet weak var epost: UITextField!
     @IBOutlet weak var passord: UITextField!
+    @IBOutlet weak var passordLabel: UILabel!
     
      let popupvindu = Popup()
     //FaceBook
@@ -25,11 +26,22 @@ class LoggInnViewController: UIViewController {
         super.viewDidLoad()
        
         // Do any additional setup after loading the view.
+        
+        passord.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        passordLabel.text = "Trykk her og skriv inn ditt passord"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        
+        
+        passordLabel.text = ""
+        
     }
     
     //Loginn knapp
@@ -45,14 +57,14 @@ class LoggInnViewController: UIViewController {
         if (regex.verifiserEpost(tekst: epost.text!)) {
             gyldigEpost = true
         } else {
-            popupvindu.vis(fromController: self,melding: "Skriv inn riktig epost aderesse.",tittel: "Noe gikk galt!")
+            popupvindu.vis(fromController: self,melding: "Tast inn en gyldig epost adresse.",tittel: "!")
             return
         }
-        //sjekker om passord er tatet riktig
+        //sjekker om passord er tastet riktig
         if (regex.verifiserPassord(tekst: passord.text!)) {
             gyldigPassord = true
         } else {
-            popupvindu.vis(fromController: self,melding: "Skriv inn passord.",tittel:"Noe gikk galt!")
+            popupvindu.vis(fromController: self,melding: "Tast inn et gyldig passord.",tittel:"!")
             return
         }
         //dersom alt er tastet riktig
@@ -64,7 +76,7 @@ class LoggInnViewController: UIViewController {
                 self.performSegue(withIdentifier: "Innlogget", sender: array)
             }
             else{
-             popupvindu.vis(fromController: self,melding: "Fant ikke bruker,prøv igjen eller kontakt admin.",tittel:"Noe gikk galt!")
+             popupvindu.vis(fromController: self,melding: "Fant ikke bruker i systemet, prøv igjen eller kontakt admin.",tittel:"!")
             }
             
         

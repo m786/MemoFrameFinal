@@ -17,12 +17,8 @@
 		AF4376C81EB7ED3500522E03 /* Tid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376C71EB7ED3500522E03 /* Tid.swift */; };
 		AF4376CA1EB7ED9100522E03 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376C91EB7ED9100522E03 /* Url.swift */; };
 		AF4376CC1EB7EF2B00522E03 /* LoggInnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376CB1EB7EF2B00522E03 /* LoggInnViewController.swift */; };
-		AF4376D01EB7FBAB00522E03 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4376CF1EB7FBAB00522E03 /* Alamofire.framework */; };
-		AF4376D21EB7FBAF00522E03 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4376D11EB7FBAF00522E03 /* AlamofireImage.framework */; };
 		AF4376D81EB7FCF500522E03 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376D71EB7FCF500522E03 /* Popup.swift */; };
-		AF4376D91EB8013400522E03 /* PopupDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4376D31EB7FBB600522E03 /* PopupDialog.framework */; };
 		AF4376DB1EB80EF800522E03 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376DA1EB80EF800522E03 /* Networking.swift */; };
-		AF4376DD1EB8104500522E03 /* Alamofire_Synchronous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4376DC1EB8104500522E03 /* Alamofire_Synchronous.framework */; };
 		AF4376DF1EB8266100522E03 /* HovedmenyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4376DE1EB8266100522E03 /* HovedmenyViewController.swift */; };
 		AF45067C1EB9374900AE4FE7 /* TesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF45067B1EB9374900AE4FE7 /* TesterViewController.swift */; };
 		AF45067E1EB937F400AE4FE7 /* ResultaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF45067D1EB937F400AE4FE7 /* ResultaterViewController.swift */; };
@@ -30,19 +26,22 @@
 		AF4506821EB938C300AE4FE7 /* InstillingerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4506811EB938C300AE4FE7 /* InstillingerViewController.swift */; };
 		AF4506841EB9429900AE4FE7 /* RegistreringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4506831EB9429900AE4FE7 /* RegistreringViewController.swift */; };
 		AF4506861EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4506851EB9452700AE4FE7 /* RegistreringTilbakemeldingViewController.swift */; };
-		AFCC3AB21EC3C08D0060928B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3AB11EC3C08D0060928B /* FBSDKShareKit.framework */; };
-		AFCC3AB41EC3C09B0060928B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3AB31EC3C09B0060928B /* FBSDKLoginKit.framework */; };
-		AFCC3AB61EC3C0A20060928B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3AB51EC3C0A20060928B /* FBSDKCoreKit.framework */; };
-		AFCC3AB81EC3C0AA0060928B /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3AB71EC3C0AA0060928B /* FacebookCore.framework */; };
-		AFCC3ABA1EC3C0AE0060928B /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3AB91EC3C0AE0060928B /* FacebookShare.framework */; };
-		AFCC3ABC1EC3C0B40060928B /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3ABB1EC3C0B40060928B /* FacebookLogin.framework */; };
-		AFCC3ABE1EC3C0C70060928B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCC3ABD1EC3C0C70060928B /* Bolts.framework */; };
 		AFD0AA0D1EBE84B0005BBF41 /* BildeTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0AA0C1EBE84AF005BBF41 /* BildeTesterViewController.swift */; };
 		AFD0AA0F1EBE9A13005BBF41 /* BildeTestenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0AA0E1EBE9A13005BBF41 /* BildeTestenViewController.swift */; };
 		AFDF378C1EBF43D900F16C91 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDF378B1EBF43D900F16C91 /* DemoViewController.swift */; };
 		AFDF378E1EBF54E200F16C91 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDF378D1EBF54E200F16C91 /* CollectionViewController.swift */; };
 		AFDF37901EBF554B00F16C91 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDF378F1EBF554B00F16C91 /* CollectionViewCell.swift */; };
-		B317CE373EBEA252E42C981D /* Pods_MemoFrameFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E91854DC53FE6691446062 /* Pods_MemoFrameFinal.framework */; };
+		F459B2691EC495D3008AED4C /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B2681EC495D3008AED4C /* FacebookLogin.framework */; };
+		F459B26B1EC495DB008AED4C /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B26A1EC495DB008AED4C /* FacebookShare.framework */; };
+		F459B26D1EC495E3008AED4C /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B26C1EC495E3008AED4C /* FacebookCore.framework */; };
+		F459B26F1EC495F0008AED4C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B26E1EC495F0008AED4C /* FBSDKCoreKit.framework */; };
+		F459B2711EC495FB008AED4C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B2701EC495FB008AED4C /* FBSDKLoginKit.framework */; };
+		F459B2731EC49606008AED4C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B2721EC49606008AED4C /* FBSDKShareKit.framework */; };
+		F459B2751EC49611008AED4C /* Alamofire_Synchronous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B2741EC49611008AED4C /* Alamofire_Synchronous.framework */; };
+		F459B2771EC4961A008AED4C /* PopupDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B2761EC4961A008AED4C /* PopupDialog.framework */; };
+		F459B2791EC49622008AED4C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B2781EC49622008AED4C /* AlamofireImage.framework */; };
+		F459B27B1EC4962B008AED4C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B27A1EC4962B008AED4C /* Alamofire.framework */; };
+		F459B27D1EC49640008AED4C /* Pods_MemoFrameFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B27C1EC49640008AED4C /* Pods_MemoFrameFinal.framework */; };
 		F4C4DFE41EAA6CFB005CA7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4DFE31EAA6CFB005CA7D0 /* AppDelegate.swift */; };
 		F4C4DFE91EAA6CFB005CA7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C4DFE71EAA6CFB005CA7D0 /* Main.storyboard */; };
 		F4C4DFEB1EAA6CFB005CA7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C4DFEA1EAA6CFB005CA7D0 /* Assets.xcassets */; };
@@ -109,6 +108,17 @@
 		AFDF378D1EBF54E200F16C91 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		AFDF378F1EBF554B00F16C91 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		C359D6B0F7556DF01038DE3E /* Pods-MemoFrameFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoFrameFinal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoFrameFinal/Pods-MemoFrameFinal.debug.xcconfig"; sourceTree = "<group>"; };
+		F459B2681EC495D3008AED4C /* FacebookLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookLogin.framework; path = "Pods/../build/Debug-iphoneos/FacebookLogin/FacebookLogin.framework"; sourceTree = "<group>"; };
+		F459B26A1EC495DB008AED4C /* FacebookShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookShare.framework; path = "Pods/../build/Debug-iphoneos/FacebookShare/FacebookShare.framework"; sourceTree = "<group>"; };
+		F459B26C1EC495E3008AED4C /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = "Pods/../build/Debug-iphoneos/FacebookCore/FacebookCore.framework"; sourceTree = "<group>"; };
+		F459B26E1EC495F0008AED4C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		F459B2701EC495FB008AED4C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		F459B2721EC49606008AED4C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		F459B2741EC49611008AED4C /* Alamofire_Synchronous.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire_Synchronous.framework; path = "Pods/../build/Debug-iphoneos/Alamofire-Synchronous/Alamofire_Synchronous.framework"; sourceTree = "<group>"; };
+		F459B2761EC4961A008AED4C /* PopupDialog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PopupDialog.framework; path = "Pods/../build/Debug-iphoneos/PopupDialog/PopupDialog.framework"; sourceTree = "<group>"; };
+		F459B2781EC49622008AED4C /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage/AlamofireImage.framework"; sourceTree = "<group>"; };
+		F459B27A1EC4962B008AED4C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		F459B27C1EC49640008AED4C /* Pods_MemoFrameFinal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_MemoFrameFinal.framework; path = "Pods/../build/Debug-iphoneos/Pods_MemoFrameFinal.framework"; sourceTree = "<group>"; };
 		F4C4DFE01EAA6CFA005CA7D0 /* MemoFrameFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoFrameFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C4DFE31EAA6CFB005CA7D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4C4DFE81EAA6CFB005CA7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,18 +140,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFCC3ABE1EC3C0C70060928B /* Bolts.framework in Frameworks */,
-				AFCC3ABC1EC3C0B40060928B /* FacebookLogin.framework in Frameworks */,
-				AFCC3ABA1EC3C0AE0060928B /* FacebookShare.framework in Frameworks */,
-				AFCC3AB81EC3C0AA0060928B /* FacebookCore.framework in Frameworks */,
-				AFCC3AB61EC3C0A20060928B /* FBSDKCoreKit.framework in Frameworks */,
-				AFCC3AB41EC3C09B0060928B /* FBSDKLoginKit.framework in Frameworks */,
-				AFCC3AB21EC3C08D0060928B /* FBSDKShareKit.framework in Frameworks */,
-				AF4376DD1EB8104500522E03 /* Alamofire_Synchronous.framework in Frameworks */,
-				AF4376D91EB8013400522E03 /* PopupDialog.framework in Frameworks */,
-				AF4376D21EB7FBAF00522E03 /* AlamofireImage.framework in Frameworks */,
-				AF4376D01EB7FBAB00522E03 /* Alamofire.framework in Frameworks */,
-				B317CE373EBEA252E42C981D /* Pods_MemoFrameFinal.framework in Frameworks */,
+				F459B27D1EC49640008AED4C /* Pods_MemoFrameFinal.framework in Frameworks */,
+				F459B27B1EC4962B008AED4C /* Alamofire.framework in Frameworks */,
+				F459B2791EC49622008AED4C /* AlamofireImage.framework in Frameworks */,
+				F459B2771EC4961A008AED4C /* PopupDialog.framework in Frameworks */,
+				F459B2751EC49611008AED4C /* Alamofire_Synchronous.framework in Frameworks */,
+				F459B2731EC49606008AED4C /* FBSDKShareKit.framework in Frameworks */,
+				F459B2711EC495FB008AED4C /* FBSDKLoginKit.framework in Frameworks */,
+				F459B26F1EC495F0008AED4C /* FBSDKCoreKit.framework in Frameworks */,
+				F459B26D1EC495E3008AED4C /* FacebookCore.framework in Frameworks */,
+				F459B26B1EC495DB008AED4C /* FacebookShare.framework in Frameworks */,
+				F459B2691EC495D3008AED4C /* FacebookLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +174,17 @@
 		902690F8F6DDD3C73B0A9ABE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F459B27C1EC49640008AED4C /* Pods_MemoFrameFinal.framework */,
+				F459B27A1EC4962B008AED4C /* Alamofire.framework */,
+				F459B2781EC49622008AED4C /* AlamofireImage.framework */,
+				F459B2761EC4961A008AED4C /* PopupDialog.framework */,
+				F459B2741EC49611008AED4C /* Alamofire_Synchronous.framework */,
+				F459B2721EC49606008AED4C /* FBSDKShareKit.framework */,
+				F459B2701EC495FB008AED4C /* FBSDKLoginKit.framework */,
+				F459B26E1EC495F0008AED4C /* FBSDKCoreKit.framework */,
+				F459B26C1EC495E3008AED4C /* FacebookCore.framework */,
+				F459B26A1EC495DB008AED4C /* FacebookShare.framework */,
+				F459B2681EC495D3008AED4C /* FacebookLogin.framework */,
 				AFCC3ABD1EC3C0C70060928B /* Bolts.framework */,
 				AFCC3ABB1EC3C0B40060928B /* FacebookLogin.framework */,
 				AFCC3AB91EC3C0AE0060928B /* FacebookShare.framework */,
@@ -483,7 +503,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -678,6 +698,14 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FacebookLogin",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FacebookShare",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FacebookCore",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire-Synchronous",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/PopupDialog",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AlamofireImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = MemoFrameFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -698,6 +726,14 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FacebookLogin",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FacebookShare",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FacebookCore",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire-Synchronous",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/PopupDialog",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AlamofireImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = MemoFrameFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

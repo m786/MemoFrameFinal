@@ -29,8 +29,10 @@ class Popup: UIViewController {
     func vis(fromController controller: UIViewController,melding: String,tittel:String){
         //lage costumize popup
         var dialogAppearance = PopupDialogDefaultView.appearance()
-        dialogAppearance.titleFont            = UIFont(name: "Futura", size: 20)!
-        dialogAppearance.messageFont          = UIFont(name: "Futura", size: 20)!
+        dialogAppearance.titleFont            = UIFont(name: "Futura-Bold", size: 40)!
+        dialogAppearance.titleColor           = UIColor(red:252, green:0, blue:0, alpha: 100)
+        dialogAppearance.messageFont          = UIFont(name: "Futura-Medium", size: 30)!
+        dialogAppearance.messageColor         = UIColor(red:0, green:0, blue:0, alpha: 80)
         dialogAppearance.messageTextAlignment = .center
         
         // knappen

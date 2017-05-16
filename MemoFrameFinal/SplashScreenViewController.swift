@@ -53,9 +53,6 @@ class SplashScreenViewController: UIViewController {
             
         })
     }
-    
-    /*func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
-    }*/
+
 
 }

@@ -16,13 +16,26 @@ class RegistreringViewController: UIViewController {
     @IBOutlet weak var passordFelt: UITextField!
     @IBOutlet weak var landFelt: UITextField!
     @IBOutlet weak var kjonnFelt: UITextField!
-    
+    @IBOutlet weak var passordInstruks: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        passordFelt.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        passordInstruks.text = "Trykk her og skriv inn ditt passord"
+        
     }
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        
+        
+        passordInstruks.text = ""
+
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,31 +56,31 @@ class RegistreringViewController: UIViewController {
         if (regex.verifiserEpost(tekst: epostFelt.text!)) {
             gyldigEpost = true
         } else {
-            popupvindu.vis(fromController: self,melding: "Skriv inn riktig epost aderesse.",tittel: "Noe gikk galt!")
+            popupvindu.vis(fromController: self,melding: "Tast inn en gyldig epost adresse.",tittel: "!")
             return
         }
         if (regex.verifiserPassord(tekst: passordFelt.text!)) {
             gyldigPassord = true
         } else {
-              popupvindu.vis(fromController: self,melding: "Skriv inn riktig passord,minst 8 tegn.",tittel: "Noe gikk galt!")
+              popupvindu.vis(fromController: self,melding: "Tast inn et gyldig passord. Minst 8 tegn.",tittel: "!")
             return
         }
         if (regex.verifiserFodselsaar(tekst: fodselsaarFelt.text!)) {
             gyldigFodselsaar = true
         } else {
-            popupvindu.vis(fromController: self,melding: "Skriv gyldig fødselsår.",tittel: "Noe gikk galt!")
+            popupvindu.vis(fromController: self,melding: "Tast inn et gyldig fødselsår.",tittel: "!")
             return
         }
         if (regex.verifiserLand(tekst: landFelt.text!)) {
             gyldigland = true
         } else {
-            popupvindu.vis(fromController: self,melding: "Skriv gyldig land.",tittel: "Noe gikk galt!")
+            popupvindu.vis(fromController: self,melding: "Tast inn et gyldig land.",tittel: "!")
             return
         }
         if (regex.verifiserKjonn(tekst: kjonnFelt.text!)) {
             gyldigKjønn = true
         } else {
-            popupvindu.vis(fromController: self,melding: "Skriv Mann eller Kvinne.",tittel: "Noe gikk galt!")
+            popupvindu.vis(fromController: self,melding: "Tast inn enten Mann eller Kvinne.",tittel: "!")
             return
         }
         // alt av verifisering godkjent, registrerer brukeren
@@ -76,7 +89,7 @@ class RegistreringViewController: UIViewController {
        if(!token.isEmpty){
         var array = nodeJs.registrering(token: token, epost: epostFelt.text!, passord: passordFelt.text!, land: landFelt.text!, fodt: fodselsaarFelt.text!, kjonn: kjonnFelt.text!)
         if(array.count == 0){
-        popupvindu.vis(fromController: self,melding: "Bruker finnes prøv igjen,eller kontakt admin.",tittel: "Noe gikk galt!")
+        popupvindu.vis(fromController: self,melding: "Bruker finnes allerede i systemet. Kontakt admin.",tittel: "!")
             return
         }
         else{
@@ -84,7 +97,7 @@ class RegistreringViewController: UIViewController {
         }
         }
        else{
-        popupvindu.vis(fromController: self,melding: "Prøv igjen,eller kontakt administrator.",tittel: "Noe gikk galt!")
+        popupvindu.vis(fromController: self,melding: "Det oppstod en feil. Prøv igjen, eller kontakt administrator.",tittel: "!")
 
         }
         

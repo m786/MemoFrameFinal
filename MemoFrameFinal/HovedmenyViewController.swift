@@ -38,6 +38,7 @@ class HovedmenyViewController: UIViewController {
     @IBAction func taTester(_ sender: UIButton) {
         self.performSegue(withIdentifier: "velgTester", sender: brukerInfo)
     }
+   
     @IBAction func testresultater(_ sender: UIButton) {
         self.performSegue(withIdentifier: "resultater", sender: brukerInfo)
     }
@@ -48,11 +49,13 @@ class HovedmenyViewController: UIViewController {
     @IBAction func instillinger(_ sender: UIButton) {
         self.performSegue(withIdentifier: "setup", sender: brukerInfo)
     }
+   
     @IBAction func loggUt(_ sender: UIButton) {
-       brukerInfo = [:]
+        brukerInfo = [:]
         epost = ""
-      
     }
+ 
+    
   
     // forbereder data til å bli flyttet fra denne viewen tl en annen via en segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
