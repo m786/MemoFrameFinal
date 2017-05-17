@@ -53,6 +53,7 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
     private var tomArray:[UIImage] = []
     private var testRunder: [Testen] = []
     var tiden = Tid()
+    var kalkuler = Kalkulator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
