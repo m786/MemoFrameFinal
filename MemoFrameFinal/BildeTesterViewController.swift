@@ -29,11 +29,7 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Testknapp layout
-        velgTestKnapp.backgroundColor = UIColor.white
-        velgTestKnapp.layer.cornerRadius = 5
-        velgTestKnapp.layer.borderWidth = 1
-        velgTestKnapp.layer.borderColor = UIColor.blue.cgColor
+
         
         //Tabell layout
         tabell.backgroundColor = UIColor.white
@@ -44,8 +40,11 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
         tabell.isHidden = true
         taTestenKnapp.isHidden = true
         alleTester()
+        
+        beskrivelse.font = UIFont(name:"Futura-Bold", size:28)
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -126,6 +125,7 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
         
         let cell = tabell.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         cell.textLabel?.text = array[indexPath.row] as? String
+        cell.textLabel?.font = UIFont(name:"Futura-bold", size:28)
         return cell
     }
     

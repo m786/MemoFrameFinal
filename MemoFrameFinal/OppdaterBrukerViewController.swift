@@ -14,6 +14,7 @@ class OppdaterBrukerViewController: UIViewController {
     var info: String = ""
     var token:String = ""
     
+  
     @IBOutlet weak var epostFelten: UITextField!
     @IBOutlet weak var epostFeltto: UITextField!
     @IBOutlet weak var gammelPassord: UITextField!
@@ -24,7 +25,7 @@ class OppdaterBrukerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     separereTokenOgEmail(data: brukerInfo)
-       epostFelten.text = info
+       
         
     }
     //Token og email for bruker
