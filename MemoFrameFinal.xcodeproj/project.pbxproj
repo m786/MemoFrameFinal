@@ -31,6 +31,7 @@
 		AFDF378C1EBF43D900F16C91 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDF378B1EBF43D900F16C91 /* DemoViewController.swift */; };
 		AFDF378E1EBF54E200F16C91 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDF378D1EBF54E200F16C91 /* CollectionViewController.swift */; };
 		AFDF37901EBF554B00F16C91 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDF378F1EBF554B00F16C91 /* CollectionViewCell.swift */; };
+		F41240BE1ED58C1A000EE0CA /* Kalkulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41240BD1ED58C1A000EE0CA /* Kalkulator.swift */; };
 		F459B2691EC495D3008AED4C /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B2681EC495D3008AED4C /* FacebookLogin.framework */; };
 		F459B26B1EC495DB008AED4C /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B26A1EC495DB008AED4C /* FacebookShare.framework */; };
 		F459B26D1EC495E3008AED4C /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F459B26C1EC495E3008AED4C /* FacebookCore.framework */; };
@@ -108,6 +109,7 @@
 		AFDF378D1EBF54E200F16C91 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		AFDF378F1EBF554B00F16C91 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		C359D6B0F7556DF01038DE3E /* Pods-MemoFrameFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoFrameFinal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoFrameFinal/Pods-MemoFrameFinal.debug.xcconfig"; sourceTree = "<group>"; };
+		F41240BD1ED58C1A000EE0CA /* Kalkulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kalkulator.swift; sourceTree = "<group>"; };
 		F459B2681EC495D3008AED4C /* FacebookLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookLogin.framework; path = "Pods/../build/Debug-iphoneos/FacebookLogin/FacebookLogin.framework"; sourceTree = "<group>"; };
 		F459B26A1EC495DB008AED4C /* FacebookShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookShare.framework; path = "Pods/../build/Debug-iphoneos/FacebookShare/FacebookShare.framework"; sourceTree = "<group>"; };
 		F459B26C1EC495E3008AED4C /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = "Pods/../build/Debug-iphoneos/FacebookCore/FacebookCore.framework"; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				AF4376DA1EB80EF800522E03 /* Networking.swift */,
 				AFDF378F1EBF554B00F16C91 /* CollectionViewCell.swift */,
 				AF123E991EC2349800A76503 /* testOgbrukerInfo.swift */,
+				F41240BD1ED58C1A000EE0CA /* Kalkulator.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				AF4376C81EB7ED3500522E03 /* Tid.swift in Sources */,
 				AFDF378C1EBF43D900F16C91 /* DemoViewController.swift in Sources */,
 				AFD0AA0D1EBE84B0005BBF41 /* BildeTesterViewController.swift in Sources */,
+				F41240BE1ED58C1A000EE0CA /* Kalkulator.swift in Sources */,
 				AF123E9A1EC2349800A76503 /* testOgbrukerInfo.swift in Sources */,
 				AF4376CA1EB7ED9100522E03 /* Url.swift in Sources */,
 			);
