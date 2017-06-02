@@ -53,7 +53,8 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
     private var tomArray:[UIImage] = []
     private var testRunder: [Testen] = []
     var tiden = Tid()
-    var kalkuler = Kalkulator()
+    var delayTid:Int = 2
+    var kalkulatorKontroller = Kalkulator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -326,24 +327,32 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
         bildeRamme.image = hjelpeArray[bildeId!]
         nesteKnapp.isHidden = true
         
-        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            self.bildeRamme.image = nil
+       // let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+       // DispatchQueue.main.asyncAfter(deadline: when) {
+            delayWithSeconds(2){
+             self.bildeRamme.image = nil
              self.label?.text = "Vennligst vent..."
-            
         }
-        let when1 = DispatchTime.now() + 4 //etter at det har gått 4 sec fra den metoden over
-        DispatchQueue.main.asyncAfter(deadline: when1) {
+       // }
+       // let when1 = DispatchTime.now() + 4 //etter at det har gått 4 sec fra den metoden over
+        //DispatchQueue.main.asyncAfter(deadline: when1) {
+            delayWithSeconds(Double(delayTid)){
             self.collectionView.isHidden = false
             self.collectionView.reloadData()
             
             self.nesteKnapp.isHidden = true
             //self.svarKnapp.isHidden = false
-            
+        }
+       // }
+    }
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
         }
     }
     
     @IBAction func svar(_ sender: UIButton) {
+        var delaytidOkes:Bool = true
         if(valgtBilde == nil){
             /* Metoden kan aktiveres dersom det ønskes at brukren skal velge en bilde
              let alert = UIAlertController(title: "Melding", message: "Vennligst velg et svar", preferredStyle: UIAlertControllerStyle.alert)
@@ -373,8 +382,13 @@ class BildeTestenViewController: UIViewController, UICollectionViewDataSource, U
             if(self.bildeId == self.valgtBilde || self.bildeId == 0 && valgtBilde == nil){
                 self.poengBilde+=1
                 self.poeng.text = "\(poengBilde)"
+                delayTid = kalkulatorKontroller.kalkulatorKontroller(delayTid: delayTid, poeng: 1)
+                delaytidOkes = false
             }
             
+            if(delaytidOkes){
+            delayTid = kalkulatorKontroller.kalkulatorKontroller(delayTid: delayTid, poeng: 0)
+            }
             self.bildeRamme.image = nil
             nesteKnapp.sendActions(for: UIControlEvents.touchUpInside)
         }

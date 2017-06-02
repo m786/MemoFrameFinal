@@ -12,6 +12,7 @@ class KodeLoginnViewController: UIViewController {
     
  
     @IBOutlet weak var pinKode: UITextField!
+    let popupvindu = Popup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +29,20 @@ class KodeLoginnViewController: UIViewController {
         
         var nodeJs = Networking()
         var token = nodeJs.getToken()
+        
         if(!token.isEmpty){
-            var data:String = nodeJs.loginnMedPin(token: token, pinKode: pinKode)
-            if(!data.isEmpty){
+            var bruker:String = nodeJs.loginnMedPin(token: token, pinKode: pinKode)
+            if(!bruker.isEmpty){
+                
+                var data :NSDictionary = ["bruker":bruker,"pinkode":pinKode.text!]
                 self.performSegue(withIdentifier: "innloggetMedPin", sender: data)
             }
+            else{
+            popupvindu.vis(fromController: self,melding: "Er pinkoden riktig tastet inn?,prøv igjen eller kontakt admin.",tittel: "!")
+            }
+        }
+        else{
+        popupvindu.vis(fromController: self,melding: "Feil på server, kontakt admin eller prøv igjen.",tittel: "!")
         }
     }
     
@@ -44,9 +54,11 @@ class KodeLoginnViewController: UIViewController {
             if let destination = segue.destination as? LoggetInnMedKodeViewController {
                 
                 // må være samme type som det variabelen som skal ta imot i det andre viewet
-                destination.info = (sender as? String)!
+                destination.brukerOgToken = (sender as? NSDictionary)!
             }
         }
         
     }
+    
+    
 }

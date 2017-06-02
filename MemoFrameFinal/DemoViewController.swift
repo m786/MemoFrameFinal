@@ -56,6 +56,8 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
     private var runder:Int = 7
     
     var imageCounter: Int = 0
+    var delayTid:Int = 2
+    var kalkulatorKontroller = Kalkulator()
     
     private var hjelpeArray:[UIImage] = []
     private var tomArray:[UIImage] = []
@@ -210,25 +212,35 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
         bildeId = sjekk(index: hjelpeArray.count)
         bildeRamme.image = hjelpeArray[bildeId!]//bilder[bildeId!]
         neste.isHidden = true
-        
-        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
+       
+       // let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+       // DispatchQueue.main.asyncAfter(deadline: when) {
+        delayWithSeconds(2){
             self.bildeRamme.image = nil
             self.label?.text = "Vennligs vent..."
         }
-        let when1 = DispatchTime.now() + 4 // change 2 to desired number of seconds
-        DispatchQueue.main.asyncAfter(deadline: when1) {
+       // }
+        
+        //let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
+       // DispatchQueue.main.asyncAfter(deadline: when1) {
+        delayWithSeconds(Double(delayTid+2)){
             self.label?.text = ""
             self.collectionView.isHidden = false
             self.collectionView.reloadData()
             
             self.neste.isHidden = true
             self.svar.isHidden = true
-            
         }
+        //}
     }
     
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
+    }
     @IBAction func svar(_ sender: UIButton) {
+        var delaytidOkes:Bool = true
         
         if(valgtBilde == nil){
             let alert = UIAlertController(title: "Melding", message: "Vennligst velg et svar", preferredStyle: UIAlertControllerStyle.alert)
@@ -254,7 +266,12 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
             if(self.bildeId == self.valgtBilde || self.bildeId == 0 && valgtBilde == nil){
                 self.poengBilde+=1
                 self.poengsum.text = "\(poengBilde)"
-                
+                delayTid = kalkulatorKontroller.kalkulatorKontroller(delayTid: delayTid, poeng: 1)
+                delaytidOkes = false
+            }
+           
+            if(delaytidOkes){
+            delayTid = kalkulatorKontroller.kalkulatorKontroller(delayTid: delayTid, poeng: 0)
             }
             self.bildeRamme.image = nil
             neste.sendActions(for: UIControlEvents.touchUpInside)

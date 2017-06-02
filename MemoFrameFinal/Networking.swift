@@ -349,4 +349,30 @@ let response =   Alamofire.request(url.resetPassord,method: .post,parameters:par
            let response = Alamofire.request(url.addUserUrl,method: .put,parameters:parameters,headers:headers).responseJSON()
         print(response)
     }
+    
+    //Få bilder returnert av server på valgt pinkode
+    func getPinkodeTest(pinkode:String,token:String)->NSDictionary{
+        let headers : HTTPHeaders = [
+            "x-access-token": token
+        ]
+        let parameters: Parameters = [
+            "pincode": pinkode
+        ]
+        let response = Alamofire.request(url.pinkodeBilder,method: .get,parameters:parameters,headers:headers).responseJSON()
+    
+        var array:NSDictionary = [:]
+        
+        if let result = response.result.value {
+            let JSON = result as! NSDictionary
+            
+            let json = JSON.object(forKey: "Tests") as? NSDictionary
+            let err = JSON.object(forKey: "Error") as! Bool
+            if(!err){
+             array = json!
+            }
+           
+        }
+        return array
+    
+    }
 }

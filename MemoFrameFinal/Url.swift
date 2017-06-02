@@ -35,6 +35,8 @@ class Url{
     private let demo: String = "/api/images?number=12"
     //Url for resette passord
     private let reset:String = "/api/users/reset"
+    //Url for pinkode bilder
+    private let pinkodeImage:String = "/api/pincode/test"
     
     var hovedlink: String{
         get{return baseUrl}
@@ -82,6 +84,10 @@ class Url{
     //Url for resette passord
     var resetPassord :String{
         get{return "\(baseUrl)\(reset)"}
+    }
+    //Url for pinkode bilder
+    var pinkodeBilder : String{
+        get{return "\(baseUrl)\(pinkodeImage)"}
     }
 }
 
