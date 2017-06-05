@@ -34,11 +34,11 @@ class TesterViewController: UIViewController {
     }
     
     @IBAction func lydTest(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "lydtester", sender: brukerInfo)
+       // self.performSegue(withIdentifier: "lydtester", sender: brukerInfo)
     }
     
     @IBAction func bildeLydTest(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "lydogbildetester", sender: brukerInfo)
+       // self.performSegue(withIdentifier: "lydogbildetester", sender: brukerInfo)
     }
 
     @IBAction func loggUt(_ sender: UIButton) {
