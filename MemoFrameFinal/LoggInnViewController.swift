@@ -17,7 +17,7 @@ class LoggInnViewController: UIViewController {
     @IBOutlet weak var passord: UITextField!
     @IBOutlet weak var passordLabel: UILabel!
     
-     let popupvindu = Popup()
+    
     //FaceBook
     var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
     var fbresult: Any?
@@ -46,7 +46,7 @@ class LoggInnViewController: UIViewController {
     
     //Loginn knapp
     @IBAction func logginn(_ sender: UIButton) {
-        
+         let popupvindu = Popup()
         // verifikasjon med Regex
         let regex = Regex()
         var gyldigEpost: Bool = false

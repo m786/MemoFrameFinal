@@ -7,6 +7,7 @@
 //Klasse for å registrerer bruker
 
 import UIKit
+import PopupDialog
 
 class RegistreringViewController: UIViewController {
 
@@ -17,6 +18,9 @@ class RegistreringViewController: UIViewController {
     @IBOutlet weak var landFelt: UITextField!
     @IBOutlet weak var kjonnFelt: UITextField!
     @IBOutlet weak var passordInstruks: UILabel!
+    // verifikasjon med Regex
+    let regex = Regex()
+    let popupvindu = Popup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +47,7 @@ class RegistreringViewController: UIViewController {
     }
     
     @IBAction func registrer(_ sender: UIButton) {
-        // verifikasjon med Regex
-        let regex = Regex()
-        let popupvindu = Popup()
+      
         
         var gyldigEpost: Bool = false
         var gyldigFodselsaar: Bool = false
@@ -55,33 +57,35 @@ class RegistreringViewController: UIViewController {
         
         if (regex.verifiserEpost(tekst: epostFelt.text!)) {
             gyldigEpost = true
+            print(regex.verifiserEpost(tekst: epostFelt.text!))
         } else {
             popupvindu.vis(fromController: self,melding: "Tast inn en gyldig epost adresse.",tittel: "!")
-            return
-        }
-        if (regex.verifiserPassord(tekst: passordFelt.text!)) {
-            gyldigPassord = true
-        } else {
-              popupvindu.vis(fromController: self,melding: "Tast inn et gyldig passord. Minst 8 tegn.",tittel: "!")
-            return
+           return
+            
         }
         if (regex.verifiserFodselsaar(tekst: fodselsaarFelt.text!)) {
             gyldigFodselsaar = true
         } else {
             popupvindu.vis(fromController: self,melding: "Tast inn et gyldig fødselsår.",tittel: "!")
-            return
+          return
+        }
+        if (regex.verifiserKjonn(tekst: kjonnFelt.text!)) {
+            gyldigKjønn = true
+        } else {
+            popupvindu.vis(fromController: self,melding: "Skriv inn kjønn,Mann eller Kvinne.",tittel: "!")
+          return
         }
         if (regex.verifiserLand(tekst: landFelt.text!)) {
             gyldigland = true
         } else {
             popupvindu.vis(fromController: self,melding: "Tast inn et gyldig land.",tittel: "!")
-            return
+         return
         }
-        if (regex.verifiserKjonn(tekst: kjonnFelt.text!)) {
-            gyldigKjønn = true
+        if (regex.verifiserPassord(tekst: passordFelt.text!)) {
+            gyldigPassord = true
         } else {
-            popupvindu.vis(fromController: self,melding: "Tast inn enten Mann eller Kvinne.",tittel: "!")
-            return
+           popupvindu.vis(fromController: self,melding: "Tast inn et gyldig passord. Minst 8 tegn.",tittel: "!")
+           return
         }
         // alt av verifisering godkjent, registrerer brukeren
        var nodeJs = Networking()
@@ -98,6 +102,7 @@ class RegistreringViewController: UIViewController {
         }
        else{
         popupvindu.vis(fromController: self,melding: "Det oppstod en feil. Prøv igjen, eller kontakt administrator.",tittel: "!")
+        return
 
         }
         

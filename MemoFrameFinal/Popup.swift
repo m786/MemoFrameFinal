@@ -11,13 +11,14 @@ import PopupDialog
 
 class Popup: UIViewController {
     
-   
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-   
-        
+     
+     
         // Do any additional setup after loading the view.
     }
 
@@ -26,10 +27,11 @@ class Popup: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     func vis(fromController controller: UIViewController,melding: String,tittel:String){
-        //lage costumize popup
-        var dialogAppearance = PopupDialogDefaultView.appearance()
-        dialogAppearance.titleFont            = UIFont(name: "Futura-Bold", size: 40)!
+
+        let dialogAppearance = PopupDialogDefaultView.appearance()
+        dialogAppearance.titleFont            = UIFont(name: "Futura-CondensedExtraBold", size: 40)!
         dialogAppearance.titleColor           = UIColor(red:252, green:0, blue:0, alpha: 100)
         dialogAppearance.messageFont          = UIFont(name: "Futura-Medium", size: 30)!
         dialogAppearance.messageColor         = UIColor(red:0, green:0, blue:0, alpha: 80)
@@ -46,7 +48,11 @@ class Popup: UIViewController {
         let title = tittel
         var message = melding
         // oppretter dialog vindu
-        let popup = PopupDialog(title: title, message: message)
+
+        
+        var popup = PopupDialog(title: title, message: message)
+        //lage costumize popup
+
         
         // opretter knapp
         let buttonOne = CancelButton(title: "OK") {

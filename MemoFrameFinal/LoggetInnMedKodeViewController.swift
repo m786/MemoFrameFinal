@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import UIKit
 import Alamofire
 import AlamofireImage
 import Alamofire_Synchronous
@@ -170,6 +169,12 @@ class LoggetInnMedKodeViewController: UIViewController, UICollectionViewDataSour
                 print("json bilder feilet")
                 return
             }
+        }
+        else{
+            let alert = UIAlertController(title: "Melding", message: "Kunne ikke laste inn tester, vennligs kontakt admin,eller prøv igjen.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
         }
     }
     

@@ -41,7 +41,7 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
         taTestenKnapp.isHidden = true
         alleTester()
         
-        beskrivelse.font = UIFont(name:"Futura-Bold", size:28)
+       
 
         // Do any additional setup after loading the view.
         
@@ -68,6 +68,11 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
                 self.present(alert, animated: true, completion: nil)
             }
             
+        }
+        else{
+            let alert = UIAlertController(title: "Melding", message: "Kunne ikke laste inn tester, vennligs kontakt admin,eller prøv igjen.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
         //Behandler array motatt fra backend slik at det kan vises i tabellen
@@ -138,7 +143,8 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
         taTestenKnapp.isHidden = false
         var b:String = testObjekt[testnr].toString()
         beskrivelse.text = ""
-        beskrivelse.insertText(b)
+        beskrivelse.font = UIFont(name:"Futura-medium", size:28)
+        beskrivelse.text = b
     }
     
     // forbereder data til å bli flyttet fra denne viewen tl en annen via en segue
@@ -172,7 +178,6 @@ class BildeTesterViewController: UIViewController,UITableViewDataSource, UITable
     @IBAction func taTesten(_ sender: UIButton) {
         dataBrukerTester.testInfo = testObjekt[testnr]
         dataBrukerTester.brukerInfo = brukerInfo
-        
         self.performSegue(withIdentifier: "spillet", sender: dataBrukerTester)
     }
     

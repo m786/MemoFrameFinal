@@ -43,6 +43,7 @@ class GlemtPassordViewController: UIViewController {
                 }
             }
         }
+         popupVindu.vis(fromController: self, melding: "Er emailen riktig skrevet? Prøv igjen eller kontakt admin!", tittel: "!")
     }
 
 }

@@ -75,6 +75,7 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
         poengsum.isHidden = true
         tekst()
         startGame()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,26 +101,43 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
         if(!token.isEmpty){
         
         var image = nodeJs.demo(token: token) as? NSArray
+       
         if(image?.count != 0){
             var objCArray = NSMutableArray(array: image!)
             if let swiftArray = objCArray as NSArray as? [String] {
                 if(swiftArray.count>0){
                     for i in swiftArray{
-                        Alamofire.request(i).responseImage { response in
+                       let res = Alamofire.request(i).responseImage { response in
                              if let image = response.result.value {
                                 self.bilder.append(image)
                             }
                         }
+                        res.downloadProgress(queue: DispatchQueue.global(qos: .default)) { progress in
+                            // Codes at here will not be delayed
+                            print("Download Progress: \(progress.fractionCompleted)")
+                            
+                            DispatchQueue.main.async {
+                                // code at here will be delayed before the synchronous finished.
+                                self.start.isHidden = false
+                            }
+                            
+                            }.response()
+                        
+                        if let error = res.responseData().error {
+                            print("Failed with error: \(error)")
+                        }else{
+                            print("Downloaded file successfully")
+                        }
                     }
              }
             }
-      }
+          }
      }
     }
     
     private func random(size:Int)->Int{
         let randomNum:UInt32 = arc4random_uniform(UInt32(size))
-        let someInt:Int = Int(randomNum)
+        var someInt:Int = Int(randomNum)
         return someInt
     }
     //metode for å ikke velge samme bilde for å vise
@@ -160,7 +178,6 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
        
         var i  :Int = 0
         if(bilder.count == 0){
-         
         copyArrays(tomArray: &bilder, originalArray: tomArray)
         }
         
@@ -200,6 +217,7 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @IBAction func neste(_ sender: UIButton) {
+        arrayBehandler()
         poengsum.isHidden = true
         poeng.isHidden = true
         label?.text = ""
@@ -208,7 +226,7 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
         påBilde+=1
         bildeRamme.image = nil
         bildenr.text = "\(påBilde) av \(runder)"
-        arrayBehandler()
+      
         bildeId = sjekk(index: hjelpeArray.count)
         bildeRamme.image = hjelpeArray[bildeId!]//bilder[bildeId!]
         neste.isHidden = true
@@ -217,7 +235,7 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
        // DispatchQueue.main.asyncAfter(deadline: when) {
         delayWithSeconds(2){
             self.bildeRamme.image = nil
-            self.label?.text = "Vennligs vent..."
+            self.label?.text = "Vennligst vent..."
         }
        // }
         
@@ -286,6 +304,8 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBAction func avsluttDemo(_ sender: UIButton) {
         self.label?.text = ""
+        bilder = []
+        hjelpeArray = []
         self.dismiss(animated: true, completion: nil)
         
     }

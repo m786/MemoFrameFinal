@@ -190,7 +190,7 @@ class Networking{
             "x-access-token": token
         ]
      let response = Alamofire.request(url.demoUrl,method: .get,headers:headers).responseJSON()
-      
+    
         if let result = response.result.value {
             let JSON = result as! NSDictionary
             let images = JSON.object(forKey: "images") as? NSArray
