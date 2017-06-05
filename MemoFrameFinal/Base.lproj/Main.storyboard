@@ -1474,7 +1474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbp-3w-wPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540.625" y="-1316.015625"/>
+            <point key="canvasLocation" x="1541" y="-1316"/>
         </scene>
         <!--Oppdater Bruker View Controller-->
         <scene sceneID="JXi-JA-a9y">
@@ -2849,9 +2849,9 @@
                                 <rect key="frame" x="0.0" y="28" width="768" height="125"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYo-fX-qOc">
-                                        <rect key="frame" x="226" y="21" width="316" height="82"/>
+                                        <rect key="frame" x="242" y="21" width="284" height="82"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="316" id="Jcm-OU-hxN"/>
+                                            <constraint firstAttribute="width" constant="284" id="Jcm-OU-hxN"/>
                                             <constraint firstAttribute="height" constant="82" id="ew0-es-6l7"/>
                                         </constraints>
                                         <attributedString key="attributedText">
@@ -3075,7 +3075,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yto-gb-wa7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="42"/>
+            <point key="canvasLocation" x="764.84375" y="41.6015625"/>
         </scene>
         <!--Registrering View Controller-->
         <scene sceneID="gNg-hO-d6E">
@@ -5048,11 +5048,11 @@
         <image name="user" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e4c-9c-Emh"/>
-        <segue reference="yMP-We-zaR"/>
-        <segue reference="Fdh-ej-232"/>
-        <segue reference="Zp7-fv-6tl"/>
         <segue reference="ukN-cq-493"/>
-        <segue reference="Skh-b7-rkd"/>
+        <segue reference="HPL-mD-nMG"/>
+        <segue reference="Obi-lD-Cu3"/>
+        <segue reference="S7J-wB-zvm"/>
+        <segue reference="GJn-68-Z4t"/>
+        <segue reference="NiO-kL-TLj"/>
     </inferredMetricsTieBreakers>
 </document>
